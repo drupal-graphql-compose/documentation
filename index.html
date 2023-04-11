@@ -3,20 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Drupal GraphQL Compose</title>
+  <link rel=icon href="_assets/graphql-logo.svg" type=image/svg+xml>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
+  <meta name="description" content="Toolkit for generating GraphQL schemas in Drupal.">
+  <meta name="robots" content="noindex" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <!-- Theme: Simple -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="/_assets/theme-custom.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Documentation',
-      repo: 'https://www.drupal.org/project/graphql_compose'
+      logo: '/_assets/graphql-logo.svg',
+      name: 'Drupal GraphQL Compose',
+      auto2top: true,
+      loadSidebar: true,
+      maxLevel: 4,
+      subMaxLevel: 2,
+      loadNavbar: true,
+      pagination: {
+        crossChapter: true
+      },
+      plugins: [
+        titlePlugin({
+          suffix: ' - GraphQL Compose'
+        })
+      ]
+    }
+    function titlePlugin(config) {
+      return (hook, vm) => {
+        hook.doneEach((content) => {
+          document.title += config.suffix
+        });
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-graphql.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+  <!-- Theme -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
 </body>
 </html>

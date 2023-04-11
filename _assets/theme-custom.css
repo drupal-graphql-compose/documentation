@@ -1,0 +1,50 @@
+:root {
+  --theme-color: rgba(227, 51, 169, 1);
+  --sidebar-width: 80vw;
+  --code-inline-color: var(--code-theme-selector);
+  --content-max-width: 70em;
+  --link-color: var(--theme-color);
+  --link-color--hover: rgba(227, 51, 169, 0.75);
+  --blockquote-em-font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --sidebar-width: clamp(200px, 30vw, 400px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --modular-scale: 1.175;
+    --base-line-height: 1.4;
+    --code-font-size: var(--font-size-s);
+  }
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+  line-height: 1.2;
+}
+
+.markdown-section h1 + h2,
+.markdown-section h1 + h3,
+.markdown-section h1 + h4,
+.markdown-section h1 + h5,
+.markdown-section h1 + h6,
+.markdown-section h1 + p {
+  margin-top: 2rem;
+}
+
+pre.copy {
+  white-space: normal !important;
+}
+
+pre.copy code {
+  white-space: normal !important;
+}
+
+.sidebar > h1 img {
+  width: 120px;
+}

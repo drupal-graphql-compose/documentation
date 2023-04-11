@@ -1,3 +1,3 @@
-# Headline
+# GraphQL Compose
 
-> An awesome project.
+> Toolkit for generating GraphQL schemas in Drupal.

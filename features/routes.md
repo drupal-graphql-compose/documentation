@@ -2,14 +2,10 @@
 
 > :fire: Enable the **graphql_compose_routes** module.
 
-- Visit `/admin/structure/types`
-- Next to the type you want to expose: Select `Edit`
-- Down the bottom select the `GraphQL` tab
-- Click `Enable loading by route`
+## Enabling routes
 
-## Basic usage
-
-Route enables the `route(path: String!)` query which enables you to load an entity by it's routed URL.
+After enabling the routes module, Each entity type has the option to `Enable loading by route`.
+It also adds enables the `route(path: String!)` query, allowing you to load an entity by it's routed URL.
 
 <!-- tabs:start -->
 

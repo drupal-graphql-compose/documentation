@@ -53,15 +53,15 @@ Each enabled entity is added into the `RouteEntityUnion` union. If you wish to r
 
 ### `RouteInternal`
 
-Represents a path that resolves to an internal entity and has an `entity` `RouteEntityUnion` property which
+Resolves to an internal type. Use the `entity` property to get deeper information on the content.
 
 ### `RouteExternal`
 
-Generally this isn't returned from the `route` query, but could be returned from a `route` property on a `Link` type.
+Generally this isn't returned from the route _query_, but could be returned from a route _property_ on a `Link` type.
 
 ### `RouteRedirect`
 
-Represents a path that resolves to a redirect. Route redirects could be redirecting internally or externally, and have a status code.
+Requires the [Redirect](https://www.drupal.org/project/redirect) module. Represents a path that resolves to a redirect. Route redirects could be redirecting internally or externally, and have a status code.
 
 ## Language support
 

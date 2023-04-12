@@ -17,7 +17,7 @@ https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817
   }
 ```
 
-## Install MetaTag module
+## Install Metatag module
 
 ```bash
 composer require 'drupal/metatag:^1.22'
@@ -28,7 +28,11 @@ composer require 'drupal/metatag:^1.22'
 - Visit `/admin/structure/types`
 - Next to the type you want to expose: Select `Manage Fields`
 - Click `Add field`
-- Select `General` &rarr; `Meta Tags`, label it and save.
+- Select `General` &rarr; `Meta Tags`
+- Add label and continue
+- Down the bottom select the `GraphQL` fieldset
+- Click `Enable GraphQL`
+- Save
 
 ## Sample Query
 

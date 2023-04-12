@@ -4,17 +4,19 @@
 
 ## Patch required
 
-You'll require a patch in your composer json to use metatags due to a compatibility issue https://www.drupal.org/project/metatag/issues/2945817.
+A patch is required to use metatags due to metatag issue [2945817](https://www.drupal.org/project/metatag/issues/2945817)
 
-The latest known good patch at time of writing is:
-https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch
+The latest known good patch at time of writing is: [metatag-data-type-support-2945817-154.patch](https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch)
+
+If using `cweagans/composer-patches` in your `composer.json`, you can patch by using:
 
 ```json
-  "patches": {
-      "drupal/metatag": {
-          "2945817 Metatag DataType": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
-      }
-  }
+...
+"patches": {
+    "drupal/metatag": {
+        "2945817 Metatag DataType": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
+    }
+}
 ```
 
 ## Install Metatag module

@@ -15,7 +15,7 @@ Each node type is will have a schema type. For example, the `article` node type 
 
 Each node type has the option to `Enable single query`.
 
-The node's schema type name is used to name the query. For example, an `article` node type will have a single query of `nodeArticle`.
+The node's schema type name is used to name the query. For example, an `article` node type will have a query of `nodeArticle`.
 
 ```graphql
 {

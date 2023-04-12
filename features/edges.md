@@ -14,7 +14,7 @@ If you find the ridigness of the Edge Cursor implementation too restrictive, you
 
 After enabling the feature module, Each entity type has the option to `Enable multiple query`.
 
-The node's schema type name is pluralised to name the query. For example, an `article` node type will have a single query of `nodeArticles`.
+The node's schema type name is pluralised to name the query. For example, an `article` node type will have a query of `nodeArticles`.
 
 ```graphql
 {

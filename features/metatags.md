@@ -38,7 +38,7 @@ composer require 'drupal/metatag:^1.22'
 
 <!-- tabs:start -->
 
-### **Sample Query**
+### **Query**
 
 ```graphql
 {
@@ -77,7 +77,7 @@ composer require 'drupal/metatag:^1.22'
 }
 ```
 
-### **Sample result**
+### **Response**
 
 ```json
 {

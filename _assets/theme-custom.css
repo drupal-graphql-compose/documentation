@@ -2,6 +2,7 @@
   --theme-color: rgba(227, 51, 169, 1);
   --sidebar-width: 80vw;
   --code-inline-color: white;
+  --code-block-line-height: 1.25;
   --code-inline-background: var(--theme-color);
   --content-max-width: 70em;
   --link-color: var(--theme-color);

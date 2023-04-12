@@ -27,3 +27,4 @@
 - Misc
   - [Fragments](misc/fragments.md)
   - [Query Names](misc/query-names.md)
+  - [Credit](misc/credit.md)

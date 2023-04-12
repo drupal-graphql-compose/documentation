@@ -42,7 +42,3 @@ The cursor is a unique identifier for a specific node in the data set. The curso
   }
 }
 ```
-
-## Credit
-
-The source for this functionality is credited to the developers on the [Open Social](https://www.drupal.org/project/social) project.

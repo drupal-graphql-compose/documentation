@@ -16,7 +16,7 @@ composer require 'drupal/graphql_compose:^2.0@beta'
 
 ## Enable it
 
-For an overwhelmingly long explanation, head to the Druapl.org docs: https://www.drupal.org/docs/extending-drupal/installing-modules
+For an overwhelmingly long explanation, head to the Drupal.org docs: https://www.drupal.org/docs/extending-drupal/installing-modules
 
 - Enable GraphQL
 - Enable GraphQL Compose

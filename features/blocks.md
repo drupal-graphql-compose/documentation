@@ -19,7 +19,7 @@ Then enable [fields](core/fields.md) on your block type.
 
 Block Content entities are exposed to GraphQL with the interface `BlockContentInterface` and the union `BlockContentUnion`.
 
-Each block content type is will have a schema type. For example, the `cool_beans` block type will be typed as `BlockContentCoolBeans`.
+Each enabled block content type has a schema type. For example, the `cool_beans` block type will be typed as `BlockContentCoolBeans`.
 
 ### Plugin blocks
 

@@ -9,4 +9,4 @@
 
 Taxonomy Term entities are exposed to GraphQL with the interface `TermInterface` and the union `TermUnion`.
 
-Each vocabulary type is will have a schema type. For example, the `tags` vocabulary type will be typed as `TermTags`.
+Each enabled vocabulary type has a schema type. For example, the `tags` vocabulary type will be typed as `TermTags`.

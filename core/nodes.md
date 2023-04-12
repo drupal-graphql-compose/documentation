@@ -9,7 +9,7 @@
 
 Node entities are exposed to GraphQL with the interface `NodeInterface` and the union `NodeUnion`.
 
-Each node type is will have a schema type. For example, the `article` node type will be typed as `NodeArticle`.
+Each enabled node type has a schema type. For example, the `article` node type will be typed as `NodeArticle`.
 
 ## Load node type by UUID
 

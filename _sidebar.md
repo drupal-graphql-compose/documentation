@@ -3,6 +3,7 @@
 - [Home](/)
 - Getting Started
   - [Install module](start/install.md)
+  - [Concepts](start/concepts.md)
   - [Fragments](start/fragments.md)
 - Core
   - [Nodes](core/nodes.md)

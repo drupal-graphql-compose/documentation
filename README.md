@@ -4,3 +4,5 @@
 
 - https://drupal-graphql-compose.github.io/documentation/
 - https://www.drupal.org/project/graphql_compose
+
+Documentation for version 2.x of the Drupal GraphQL Compose module.

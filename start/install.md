@@ -1,26 +1,11 @@
 # Getting started
 
+## Install the module
+
 ```bash
-composer require drupal/graphql_compose
+composer require 'drupal/graphql_compose:^2.0@beta'
 ```
 
-```graphql
-{
-  nodePage(id: "uuid-here") {
-    title
-    body {
-      processed
-    }
-  }
-}
-```
+## Start adding entities and fields
 
-```yml
-test:
-  yml: 'Highlighting'
-```
-
-```php
-<?php
-echo "hi";
-```
+...

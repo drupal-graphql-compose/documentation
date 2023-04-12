@@ -1,7 +1,8 @@
 :root {
   --theme-color: rgba(227, 51, 169, 1);
   --sidebar-width: 80vw;
-  --code-inline-color: var(--code-theme-selector);
+  --code-inline-color: white;
+  --code-inline-background: var(--theme-color);
   --content-max-width: 70em;
   --link-color: var(--theme-color);
   --link-color--hover: rgba(227, 51, 169, 0.75);
@@ -43,6 +44,10 @@ pre.copy {
 
 pre.copy code {
   white-space: normal !important;
+}
+
+.sidebar-nav {
+  font-size: calc(var(--modular-scale-1) / 1.1);
 }
 
 .sidebar > h1 img {

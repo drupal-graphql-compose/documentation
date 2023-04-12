@@ -1,6 +1,6 @@
 # Menus
 
-> Enable the **graphql_compose_menus** module.
+> :fire: Enable the **graphql_compose_menus** module.
 
 - Visit `/admin/structure/menu`
 - Next to the type you want to expose: Select `Edit menu`

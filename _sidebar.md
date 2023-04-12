@@ -2,7 +2,7 @@
 
 - [Home](/)
 - Getting Started
-  - [Install module](start/install.md)
+  - [Install](start/install.md)
   - [Concepts](start/concepts.md)
 - Core
   - [Nodes](core/nodes.md)
@@ -26,3 +26,4 @@
   - [Schema Types](extending/schema_type.md)
 - Misc
   - [Fragments](misc/fragments.md)
+  - [Query Names](misc/query-names.md)

@@ -1,3 +1,3 @@
 # Routes
 
-> Enable the **graphql_compose_routes** module.
+> :fire: Enable the **graphql_compose_routes** module.

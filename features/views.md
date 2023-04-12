@@ -1,3 +1,3 @@
-# Routes
+# Views
 
-> Enable the **graphql_compose_views** module.
+> :fire: Enable the **graphql_compose_views** module.

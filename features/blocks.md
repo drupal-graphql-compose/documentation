@@ -1,12 +1,65 @@
 # Blocks
 
-> Enable the **graphql_compose_blocks** module.
+> :fire: Enable the **graphql_compose_blocks** module.
 
-## Plugin blocks
+## Block types
 
-## Content blocks
+### Block Content blocks
+
+Block Content are an entity with a type, so we just follow the core entity pattern.
 
 - Visit `/admin/structure/block/block-content/types`
 - Next to the type you want to expose: Select `Edit`
 - Down the bottom select the `GraphQL` fieldset
 - Click `Enable GraphQL`
+
+Then enable [fields](core/fields.md) on your block type.
+
+#### GraphQL Types
+
+Block Content entities are exposed to GraphQL with the interface `BlockContentInterface` and the union `BlockContentUnion`.
+
+Each block content type is will have a schema type. For example, the `cool_beans` block type will be typed as `BlockContentCoolBeans`.
+
+### Plugin blocks
+
+Plugin blocks are considered _scalar unknown weird things_.
+We don't know whats in them. Only that they probably have content.
+
+The best we can do is get a render.
+
+## Loading a block
+
+Blocks can be loaded by their system `plugin id`. Block plugin IDs aren't easy. Heres some examples:
+
+### Loading a plugin block
+
+```graphql
+{
+  block(block_plugin_id: "system_powered_by_block") {
+    ... on BlockPlugin {
+      title
+      render
+    }
+  }
+}
+```
+
+### Loading a content block by it's uuid
+
+```graphql
+{
+  block(block_plugin_id: "block_content:43267584-d965-11ed-afa1-0242ac120002") {
+    ... on BlockContent {
+      title
+      entity {
+        ... on BlockContentCoolBeans {
+          beans
+        }
+      }
+    }
+  }
+}
+```
+
+> Tip: GraphQL Compose supports the [block_field](https://www.drupal.org/project/block_field) module. You can use it load blocks by reference in a Paragraph or Node.

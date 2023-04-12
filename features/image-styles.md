@@ -1,6 +1,6 @@
 # Image Styles
 
-> Enable the **graphql_compose_image_style** module.
+> :fire: Enable the **graphql_compose_image_style** module.
 
 - Visit `/admin/config/media/image-styles`
 - Next to the type you want to expose: Select `Edit`

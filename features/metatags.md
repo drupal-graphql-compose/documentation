@@ -1,6 +1,6 @@
 # Metatags
 
-> Enable the **graphql_compose_metatags** module.
+> :fire: Enable the **graphql_compose_metatags** module.
 
 ## Patch required
 

@@ -9,19 +9,24 @@
 
 Node entities are exposed to GraphQL with the interface `NodeInterface` and the union `NodeUnion`.
 
+Each node type is will have a schema type. For example, the `article` node type will be typed as `NodeArticle`.
+
 ## Load node type by UUID
 
-> It's recommended you load your nodes using the [Routes](features/routes.md) feature if the UUID is unknown.
+Each node type has the option to `Enable single query`.
 
-Each node type has the option to `Enable single query`. The node's machine name is converted into camel case and prefixed with "node". For example, the `Article` node type will have a single query of `nodeArticle`.
+The node's schema type name is used to name the query. For example, an `article` node type will have a single query of `nodeArticle`.
 
 ```graphql
 {
-  nodeArticle(id: "uuid-of-your-node") {
+  nodeArticle(id: "43267052-d965-11ed-afa1-0242ac120002") {
     id
     title
   }
 }
 ```
 
-> Extra loading options are available when features such as `Route` and `Edges` are enabled.
+> It's recommended you load your nodes using the [Routes](features/routes.md) feature if the UUID is unknown.
+> Extra loading options are available when features such as `Views`, `Route` and `Edges` are enabled.
+
+> Tip: Don't name your content type "Union" or "Interface" :poop:

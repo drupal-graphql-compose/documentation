@@ -36,7 +36,9 @@ composer require 'drupal/metatag:^1.22'
 - Click `Enable GraphQL`
 - Save
 
-## Sample Query
+<!-- tabs:start -->
+
+### **Sample Query**
 
 ```graphql
 {
@@ -75,7 +77,7 @@ composer require 'drupal/metatag:^1.22'
 }
 ```
 
-## Sample result
+### **Sample result**
 
 ```json
 {
@@ -104,3 +106,5 @@ composer require 'drupal/metatag:^1.22'
   }
 }
 ```
+
+<!-- tabs:end -->

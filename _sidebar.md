@@ -4,7 +4,6 @@
 - Getting Started
   - [Install module](start/install.md)
   - [Concepts](start/concepts.md)
-  - [Fragments](start/fragments.md)
 - Core
   - [Nodes](core/nodes.md)
   - [Media](core/media.md)
@@ -25,3 +24,5 @@
   - [Entity Types](extending/entity_type.md)
   - [Field Types](extending/field_type.md)
   - [Schema Types](extending/schema_type.md)
+- Misc
+  - [Fragments](misc/fragments.md)

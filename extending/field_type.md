@@ -13,7 +13,7 @@ In your module, create the path `src/Plugin/GraphQLCompose/FieldType/` and creat
 
 ## Simple value
 
-If your field only needs to get `$item->vaule` and returns a simple scalar like String, Boolean, Int, you can just use `FieldProducerTrait`. Done.
+If your field only needs to get `$item->value` and returns a simple scalar like String, Boolean, Int, you can just use `FieldProducerTrait`. Done.
 
 ```php
 <?php

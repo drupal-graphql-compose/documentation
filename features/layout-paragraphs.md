@@ -19,7 +19,7 @@ Each enabled `Paragraph` type will recieve:
 
 ## Example build
 
-In our example we have:
+In the example:
 
 - ParagraphSection has layouts assigned in Layout Paragraphs.
 - ParagraphText on the left
@@ -114,19 +114,19 @@ If you Paragraph is nested within a region of the layout, it's `position` will b
 
 <!-- tabs:end -->
 
-So in the above we can see that:
+So in the above you can see that:
 
-- We have a `ParagraphSection` with an id of `2b3af800-9e37-4dc4-9db8-e8e3caf665ee`
+- You have a `ParagraphSection` with an id of `2b3af800-9e37-4dc4-9db8-e8e3caf665ee`
 
   - It has a layout of `layout_twocol`
   - It has no position, as it's not nested within another Paragraph.
 
-- We have a `ParagraphText`
+- You have a `ParagraphText`
 
   - It has no layout
   - It's parent is `2b3af800-9e37-4dc4-9db8-e8e3caf665ee` and it's region is `left`
 
-- We have a `ParagraphMedia`
+- You have a `ParagraphMedia`
   - It has no layout
   - It's parent is `2b3af800-9e37-4dc4-9db8-e8e3caf665ee` and it's region is `right`
 

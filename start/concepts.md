@@ -2,7 +2,7 @@
 
 ## Its empty!
 
-Yes! By default we expose nothing. It's a choose your own adventure. You should be:
+Yes! By default the module will expose nothing. It's "a choose your own adventure". You should be:
 
 - Enabling the features you want
 - Enabling entity types

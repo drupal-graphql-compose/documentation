@@ -6,7 +6,7 @@
 
 ### Block Content blocks
 
-Block Content are an entity with a type, so we just follow the core entity pattern.
+Block Content are an entity with a type, which will follow the core entity pattern.
 
 - Visit `/admin/structure/block/block-content/types`
 - Next to the type you want to expose: Select `Edit`
@@ -24,9 +24,9 @@ Each enabled block content type has a schema type. For example, the `cool_beans`
 ### Plugin blocks
 
 Plugin blocks are considered _scalar unknown weird things_.
-We don't know whats in them. Only that they probably have content.
+You don't know whats in them. Only that they probably have content.
 
-The best we can do is get a render.
+The best you can do is get a render.
 
 ## Loading a block
 

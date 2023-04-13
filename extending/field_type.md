@@ -1,11 +1,11 @@
 # Extending Field Type
 
-A Field Type is a Drupal field. We need to tell Drupal what data to return for our field.
+A Field Type is a Drupal field. You need to tell Drupal what data to return for your field.
 
 ## Create a new plugin
 
-In this Example, we will pretend we have a contrib module called **dingo** that has added a new field type `dingo_field`.
-We have that field on our entity, and want to display it in GraphQL.
+In this Example, you will pretend you have a contrib module called **dingo** that has added a new field type `dingo_field`.
+You have that field on your entity, and want to display it in GraphQL.
 
 Create a new module in your project.
 
@@ -43,12 +43,12 @@ class DingoItem extends GraphQLComposeFieldTypeBase {
 
 The annotation under `GraphQLComposeFieldType` tells us two things.
 
-- **id**: The name of the field we are trying to extend.
+- **id**: The name of the field you are trying to extend.
 - **type_sdl**: The type it will become in GraphQL.
 
 ## Complex value
 
-If your new field has more complex data, like a list of values, we can change the `type_sdl` to a custom type and implement the `FieldProducerItemInterface` interface.
+If your new field has more complex data, like a list of values, you can change the `type_sdl` to a custom type and implement the `FieldProducerItemInterface` interface.
 
 This allows us to override the value, and return an array of data to be passed to a new **type_sdl** of `Dingo`
 
@@ -94,4 +94,4 @@ class DingoItem extends GraphQLComposeFieldTypeBase implements FieldProducerItem
 }
 ```
 
-Now we have to create a [Custom Schema Type](extending/schema_type.md) to handle the `Dingo` data we are returning.
+Now you have to create a [Custom Schema Type](extending/schema_type.md) to handle the `Dingo` data you are returning.

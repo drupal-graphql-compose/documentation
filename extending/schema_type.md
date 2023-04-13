@@ -62,7 +62,7 @@ The annotation under `GraphQLComposeSchemaType` tells us:
 
 - **id**: The name of the type you are trying to create.
 
-## Returning another custom type in your type.
+## Nested type
 
 Pretend again that your `DingoItem` field defined in the [custom field type](extending/field_type.md) now returns something like this:
 
@@ -134,3 +134,29 @@ Now you can alter your original `Dingo` plugin, and change the Dingo.woof field 
 ```
 
 > TIp: Take a look at existing _GraphQLComposeSchemaType_ plugins to see how to chop up your schema. It's pretty flexible.
+
+## Extending existing types
+
+You can customise existing types by extending them. In your _GraphQLComposeSchemaType_ you can replace the `getExtensions` method to extend GraphQL types.
+
+Example:
+
+```php
+# ...
+public function getExtensions(): array {
+  $extensions = parent::getExtensions();
+
+  $extensions[] = new ObjectType([
+    'name' => 'User',
+    'fields' => fn() => [
+      'dingo' => static::type('Dingo'),
+    ],
+  ]);
+
+  return $extensions;
+}
+```
+
+You can extend queries, types, most things.
+
+> Tip: Take a look at existing _GraphQLComposeSchemaType_ plugins for examples of extending types.

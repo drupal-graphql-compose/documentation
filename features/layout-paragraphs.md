@@ -23,7 +23,7 @@ In our example we have:
 
 - ParagraphSection has layouts assigned in Layout Paragraphs.
 - ParagraphText on the left
-- Paragraphmedia on the right
+- ParagraphMedia on the right
 
 ![Layout Paragraphs](../_assets/sections.png)
 

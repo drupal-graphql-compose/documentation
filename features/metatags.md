@@ -32,9 +32,8 @@ composer require 'drupal/metatag:^1.22'
 - Click `Add field`
 - Select `General` &rarr; `Meta Tags`
 - Add label and continue
-- Down the bottom select the `GraphQL` fieldset
-- Click `Enable GraphQL`
 - Save
+- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose` and enable your field.
 
 <!-- tabs:start -->
 

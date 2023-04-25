@@ -153,4 +153,4 @@ mutation {
 
 > Tip: Use the Explorer to find out what fields are required for your particular mutations.
 
-> Tip: Threaded comments use some mildly confusing 01/ 02/00.0 semantics for the thread. You can use this to reconstruct the heirarchy of comments. How? No idea. But you can.
+> Tip: Threaded comments use some mildly confusing 01/ 02/00.0 semantics for the thread. You can use this to reconstruct the hierarchy of comments. How? No idea. But you can.

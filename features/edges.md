@@ -8,7 +8,7 @@
 
 ## Just use Views
 
-If you find the ridigness of the Edge Cursor implementation too restrictive, you can use the [Views](features/views.md) feature instead. It enables filtering, sorting & pagination on any available entity type. Views and Connections could have different use cases, depending on your app.
+If you find the rigidness of the Edge Cursor implementation too restrictive, you can use the [Views](features/views.md) feature instead. It enables filtering, sorting & pagination on any available entity type. Views and Connections could have different use cases, depending on your app.
 
 ## Enabling edges
 

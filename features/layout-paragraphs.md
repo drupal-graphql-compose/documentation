@@ -12,7 +12,7 @@ composer require 'drupal/layout_paragraphs:^2.0'
 
 ## Whats added
 
-Each enabled `Paragraph` type will recieve:
+Each enabled `Paragraph` type will receive:
 
 - `LayoutParagraphsInterface` interface.
 - `composition` field.

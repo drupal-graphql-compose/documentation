@@ -1,9 +1,10 @@
 # Taxonomy Terms
 
-- Visit `/admin/structure/taxonomy`
-- Next to the type you want to expose: Select `Edit vocabulary`
-- Down the bottom select the `GraphQL` tab
+- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Select the `Taxonomy term` tab
+- Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
+- [Add some fields](core/fields.md).
 
 ## GraphQL Types
 

@@ -38,6 +38,8 @@ Under the pager _options_, these settings are available:
 
 ## Sample query
 
+> Tip: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. It's a road map feature to add contextual filters and contextual responses.
+
 <!-- tabs:start -->
 
 ### **Query**
@@ -90,6 +92,8 @@ Under the pager _options_, these settings are available:
 ```
 
 <!-- tabs:end -->
+
+> Tip: Your query structure will vary to the above examples based on what you have enabled within your view. Check your GraphQL Explorer for the available options under your query and input types.
 
 ## Field Views
 

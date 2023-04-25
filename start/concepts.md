@@ -1,5 +1,9 @@
 # Concepts
 
+## What have we done
+
+We've built a GraphQL schema that exposes the data from Drupal in a way that makes sense for a decoupled application. We're trying to keep it simple, we're trying to let you create lean schemas. We're trying to make it easy to use.
+
 ## Its empty!
 
 Yes! By default the module will expose nothing. It's "a choose your own adventure". You should be:

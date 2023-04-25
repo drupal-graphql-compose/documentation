@@ -21,3 +21,13 @@ For an overwhelmingly long explanation, head to the Drupal.org docs: https://www
 - Enable GraphQL
 - Enable GraphQL Compose
 - Enable GraphQL Compose feature modules.
+
+## Create a schema
+
+- Go to `/admin/config/graphql` and click `Create server`
+- Give your server a label
+- Select the `GraphQL Compose Schema`
+- Give your server an endpoint URL, `/graphql` works fine.
+- Save
+
+> Note: IGNORE any **Schema configuration** fields when creating your server, leave them all unchecked. Thats a form render bug with GraphQL module.

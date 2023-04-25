@@ -2,9 +2,9 @@
 
 > :fire: Enable the **graphql_compose_menus** module.
 
-- Visit `/admin/structure/menu`
-- Next to the menu you want to expose: Select `Edit menu`
-- Down the bottom select the `GraphQL` fieldset
+- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Select the `Menu` tab
+- Select the menu you want to enable.
 - Click `Enable GraphQL`
 
 ## What it is

@@ -2,9 +2,10 @@
 
 To add a field to the schema, in your field config UI:
 
-- Navigate to the `Manage Fields` page for your entity type.
-- Next to the field you want to expose: Select `Edit`
-- Down the bottom select the `GraphQL` fieldset
+- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`.
+- Select the entity type that has your field.
+- Select the entity bundle that has your field.
+- Scroll down to your field.
 - Click `Enable GraphQL`
 
 ## Field name

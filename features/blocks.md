@@ -8,12 +8,11 @@
 
 Block Content are an entity with a type, which will follow the core entity pattern.
 
-- Visit `/admin/structure/block/block-content/types`
-- Next to the type you want to expose: Select `Edit`
-- Down the bottom select the `GraphQL` fieldset
+- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Select the `Custom block` tab
+- Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
-
-Then enable [fields](core/fields.md) on your block type.
+- [Add some fields](core/fields.md).
 
 #### GraphQL Types
 

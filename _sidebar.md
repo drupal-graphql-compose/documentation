@@ -12,6 +12,7 @@
   - [Add Fields](core/fields.md)
 - Features
   - [Blocks](features/blocks.md)
+  - [Comments](features/comments.md)
   - [Edges](features/edges.md)
   - [Image Styles](features/image-styles.md)
   - [Layout Paragraphs](features/layout-paragraphs.md)

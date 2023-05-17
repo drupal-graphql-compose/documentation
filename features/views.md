@@ -38,7 +38,7 @@ Under the pager _options_, these settings are available:
 
 ## Sample query
 
-> Tip: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. It's a road map feature to add contextual filters and contextual responses.
+> Tip: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. Consider using a viewfield for context.
 
 <!-- tabs:start -->
 

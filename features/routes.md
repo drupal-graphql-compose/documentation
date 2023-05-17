@@ -49,11 +49,11 @@ Each enabled entity is added into the `RouteEntityUnion` union. If you wish to r
 
 ### `RouteInternal`
 
-Resolves to an internal type. Use the `entity` property to get deeper information on the content.
+Resolves to an internal type. Use the `entity` property to get deeper information on the content. Internal routes also have breadcrumbs.
 
 ### `RouteExternal`
 
-Generally this isn't returned from the route _query_, but could be returned from a route _property_ on a `Link` type.
+Generally this isn't returned from the route _query_, but could be returned from a route _field_ on a `Link` type.
 
 ### `RouteRedirect`
 

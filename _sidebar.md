@@ -21,11 +21,14 @@
   - [Routes](features/routes.md)
   - [Users](features/users.md)
   - [Views](features/views.md)
+  - [Viewfield](features/viewfield.md)
 - Extending
   - [Entity Types](extending/entity_type.md)
   - [Field Types](extending/field_type.md)
   - [Schema Types](extending/schema_type.md)
 - Misc
+  - [UUID](misc/uuid.md)
   - [Fragments](misc/fragments.md)
   - [Query Names](misc/query-names.md)
+  - [Changelog](misc/changelog.md)
   - [Credit](misc/credit.md)

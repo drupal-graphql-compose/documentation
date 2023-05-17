@@ -26,11 +26,7 @@ Each enabled menu is added into the `MenuAvailable` enum. For example, an menu c
     items {
       title
       description
-      route {
-        ... on Route {
-          url
-        }
-      }
+      url
     }
   }
 }
@@ -47,16 +43,12 @@ Each enabled menu is added into the `MenuAvailable` enum. For example, an menu c
         {
           "title": "Home",
           "description": "Sample home link",
-          "route": {
-            "url": "/home"
-          }
+          "url": "/home"
         },
         {
           "title": "Another page",
           "description": "This is a description",
-          "route": {
-            "url": "/another-page"
-          }
+          "url": "/another-page"
         }
       ]
     }
@@ -74,11 +66,7 @@ There is a recurring limitation in GraphQL. To get menus to _n levels deep_ you 
 fragment MenuItemFragment on MenuItem {
   title
   description
-  route {
-    ... on Route {
-      url
-    }
-  }
+  url
 }
 
 {

@@ -5,7 +5,7 @@
 ## Install Metatag module
 
 ```bash
-composer require 'drupal/metatag:^1.24'
+composer require 'drupal/metatag:^2.0@RC'
 ```
 
 ## Add a metatag field to your entity (eg Node Page)

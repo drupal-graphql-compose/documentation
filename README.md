@@ -9,3 +9,5 @@ understand schema without too many "Drupalisms".
 ---
 
 Documentation for version `2.x` of the Drupal GraphQL Compose module
+
+This is beta software. Please read changelogs.

@@ -35,7 +35,7 @@ Blocks can be loaded by their system `plugin id`. Block plugin IDs aren't easy. 
 
 ```graphql
 {
-  block(block_plugin_id: "system_powered_by_block") {
+  block(id: "system_powered_by_block") {
     ... on BlockPlugin {
       title
       render
@@ -48,7 +48,7 @@ Blocks can be loaded by their system `plugin id`. Block plugin IDs aren't easy. 
 
 ```graphql
 {
-  block(block_plugin_id: "block_content:43267584-d965-11ed-afa1-0242ac120002") {
+  block(id: "block_content:43267584-d965-11ed-afa1-0242ac120002") {
     ... on BlockContent {
       title
       entity {

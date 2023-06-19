@@ -4,6 +4,7 @@
 - Getting Started
   - [Install](start/install.md)
   - [Concepts](start/concepts.md)
+  - [Example Apps](misc/example-apps.md)
 - Core
   - [Nodes](core/nodes.md)
   - [Media](core/media.md)

@@ -6,6 +6,7 @@
 
 ### General
 
+- Drupal 9.5 support
 - Add example Vue3 app to documentation.
 - Add settings panel.
 - Add ability to toggle on entity IDs.

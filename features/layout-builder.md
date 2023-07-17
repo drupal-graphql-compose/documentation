@@ -1,9 +1,12 @@
 # Layout Builder (dev)
 
 > :fire: Enable the **graphql_compose_layout_builder** module.\
+
 > :baby: This module is in development preview, and could undergo changes depending on feedback.
 
-The layout builder is a way to build a page from components. It's a weird and rich ecosystem. Talk through any integration requirement ideas with us on Slack.
+```bash
+composer require 'drupal/graphql_compose:2.0.x-dev@dev'
+```
 
 ## Whats added
 
@@ -118,6 +121,47 @@ You could re-construct the layout in your frontend by using the `layout` id to c
 }
 ```
 
+### **Schema**
+
+```graphql
+"""
+This content has been arranged by a User using Layout Builder.
+"""
+interface LayoutBuilderInterface {
+  sections: [LayoutBuilderSection!]
+}
+
+"""
+A Layout Builder section defined by the CMS.
+"""
+type LayoutBuilderSection {
+  """
+  Machine readable identifier of the section.
+  """
+  id: ID!
+
+  """
+  A layout section component.
+  """
+  components: [LayoutBuilderComponent!]
+
+  """
+  The layout for this section.
+  """
+  layout: Layout!
+
+  """
+  The settings of the layout section.
+  """
+  settings: Attributes!
+
+  """
+  The delta position of the layout section.
+  """
+  weight: Int!
+}
+```
+
 <!-- tabs:end -->
 
 ## Regions?
@@ -137,20 +181,72 @@ const getRegionComponents = (components, region) => {
 
 Components (`LayoutBuilderComponent`) are in a _region_, and contain blocks with configuration.
 
+<!-- tabs:start -->
+
+### **Query**
+
 ```graphql
-components {
-  id
-  region
-  configuration
-  block {
-    __typename
+{
+  route(path: "/") {
+    ... on RouteInternal {
+      entity {
+        ... on NodeArticle {
+          sections {
+            components {
+              id
+              region
+              configuration
+              block {
+                __typename
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 ```
 
+### **Schema**
+
+```graphql
+"""
+A layout section component contains blocks of content.
+"""
+type LayoutBuilderComponent {
+  """
+  Machine readable name of the layout definition.
+  """
+  id: ID!
+
+  """
+  Blocks of content for the section component.
+  """
+  block: BlockUnion!
+
+  """
+  Any configuration for the component.
+  """
+  configuration: Attributes!
+
+  """
+  The region of the layout section component.
+  """
+  region: String!
+
+  """
+  The weight position of the layout section component.
+  """
+  weight: Int!
+}
+```
+
+<!-- tabs:end -->
+
 The configuration is _kind of_ unknown. It changes per component type. It's a dumb scala for now.
 
-## Blocks
+## Component Blocks
 
 Blocks can be [standard blocks](/features/blocks.md) or a new type `BlockField`.
 
@@ -191,6 +287,10 @@ Each interface field is reduced into a generic type for each entity type. Eg `No
 
 Each unique field for an entity type is a specific type for that entity bundle. Eg `NodeArticle.body` &rarr; `BlockFieldNodeArticleBody`
 
+<!-- tabs:start -->
+
+### **Query**
+
 ```graphql
 ... on BlockField {
   fieldName
@@ -209,6 +309,42 @@ Each unique field for an entity type is a specific type for that entity bundle. 
   }
 }
 ```
+
+### **Schema**
+
+```graphql
+"""
+A block field is a modular field property that can be displayed in various regions of a website's layout.
+"""
+type BlockField implements BlockInterface {
+  """
+  The Universally Unique IDentifier (UUID).
+  """
+  id: ID!
+
+  """
+  The title of the block if provided.
+  """
+  title: String
+
+  """
+  The rendered output of the block.
+  """
+  render: Html
+
+  """
+  The entity field to be displayed within the block.
+  """
+  field: BlockFieldUnion!
+
+  """
+  The name of the field property to be displayed within the block.
+  """
+  fieldName: String!
+}
+```
+
+<!-- tabs:end -->
 
 The layout here is user structured content - the editor can chose any fields in your entity. You need to be prepared to deal with anything your entity can do. It's going to be a beefy query. I'd suggest setting up a fragment per field.
 

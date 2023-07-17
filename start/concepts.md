@@ -14,5 +14,3 @@ You should be:
 - Enabling fields on entity types
 
 GraphQL Compose is built upon the Drupal Plugin API and webonyx/graphql-php. It enables you as a developer to customise and extend and add your own fields, entities and features by using hooks and custom plugins.
-
-It's all about developer experience.

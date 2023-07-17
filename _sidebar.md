@@ -1,35 +1,36 @@
 <!-- _sidebar.md -->
 
-- [Home](/)
 - Getting Started
-  - [Install](start/install.md)
+  - [Install](/)
   - [Concepts](start/concepts.md)
   - [Example Apps](misc/example-apps.md)
 - Core
+  - [Fields](core/fields.md)
   - [Nodes](core/nodes.md)
   - [Media](core/media.md)
-  - [Paragraphs](core/paragraphs.md)
   - [Taxonomy Terms](core/terms.md)
-  - [Add Fields](core/fields.md)
 - Features
+  - [Breadcrumbs](features/breadcrumbs.md)
   - [Blocks](features/blocks.md)
   - [Comments](features/comments.md)
   - [Edges](features/edges.md)
   - [Image Styles](features/image-styles.md)
+  - [Layout Builder (dev)](features/layout-builder.md)
   - [Layout Paragraphs](features/layout-paragraphs.md)
   - [Menus](features/menus.md)
   - [Metatags](features/metatags.md)
+  - [Paragraphs](features/paragraphs.md)
+  <!-- - [Revisions & Previews](features/revisions-previews.md) -->
   - [Routes](features/routes.md)
   - [Users](features/users.md)
   - [Views](features/views.md)
   - [Viewfield](features/viewfield.md)
 - Extending
-  - [Entity Types](extending/entity_type.md)
   - [Field Types](extending/field_type.md)
   - [Schema Types](extending/schema_type.md)
+  - [Entity Types](extending/entity_type.md)
 - Misc
   - [UUID](misc/uuid.md)
   - [Fragments](misc/fragments.md)
   - [Query Names](misc/query-names.md)
-  - [Changelog](misc/changelog.md)
-  - [Credit](misc/credit.md)
+  - [Attribution](misc/credit.md)

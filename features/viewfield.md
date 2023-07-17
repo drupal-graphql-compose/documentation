@@ -1,6 +1,8 @@
 # Viewfield
 
-We support the ability to add a view as a field on a type. To enable, install the [Viewfield](https://www.drupal.org/project/viewfield) module. This will enable an option in te GraphQL Compose configuration to embed your view on any viewfield references.
+We support the ability to add a view as a field on a type. To enable, install the [Viewfield](https://www.drupal.org/project/viewfield) module.
+
+If enabled, an option to embed your view will be available on the GraphQL Compose Schema configuration page.
 
 > You should be mindful of any performance implications of enabling views as fields. Can a _bad actor_ request a ton of data on your website all at once? _Maybe_ they can via menus or edge connections.
 

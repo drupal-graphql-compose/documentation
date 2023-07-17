@@ -18,3 +18,5 @@ The default field name will be a camel case version of the field's machine name,
 Optionally rename your field in the schema by editing the field and giving it any name you want.
 
 > Renaming can be useful for avoiding naming convention conflicts and avoid the need for making aliases within your queries.
+
+<a href="./_assets/settings.png">![Settings Interface](../_assets/settings.png)</a>

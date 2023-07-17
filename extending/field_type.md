@@ -1,19 +1,92 @@
-# Extending Field Type
+# Field Types
 
-A Field Type is a Drupal field. You need to tell Drupal what data to return for your field.
+> A Field Type is a Drupal field. You need to tell Drupal what data to return for your field.\
+> A Drupal field type Example is: `Drupal\text\Plugin\Field\FieldType\TextWithSummaryItem`
 
-## Create a new plugin
+## Option: Modify the result with hooks
 
-In this Example, you will pretend you have a contrib module called **dingo** that has added a new field type `dingo_field`.
-You have that field on your entity, and want to display it in GraphQL.
+If you want to modify the result of an existing field type, you can use hooks.
 
-Create a new module in your project.
+```php
+use \Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 
-In your module, create the path `src/Plugin/GraphQLCompose/FieldType/` and create a new file `DingoItem.php`.
+/**
+ * Alter results for producers which use FieldProducerPluginBase.
+ *
+ * @param array $results
+ *   The results being returned.
+ * @param array $context
+ *   Context Passed to resolver. Eg $context['field'].
+ * @param \Drupal\Core\Cache\RefinableCacheableDependencyInterface $metadata
+ *   Context for metadata expansion.
+ */
+function hook_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata) {
+  $field = $context['value']->getFieldDefinition();
+  if ($field->getName() === 'field_potato') {
+    foreach ($results as &$result) {
+      $result['chips'] = TRUE;
+    }
+  }
+}
+```
 
-## Simple value
+## Option: Replace the plugin
 
-If your field only needs to get `$item->value` and returns a simple scalar like String, Boolean, Int, you can just use `FieldProducerTrait`. Done.
+If you're a savvy developer, you can override or modify a schema type by altering the plugin definition.
+
+```php
+/**
+ * Implements hook_graphql_compose_field_type_alter().
+ */
+function mymodule_graphql_compose_field_type_alter(array &$field_types) {
+  $field_types['address']->setClass('Drupal\mymodule\MyAddressItem');
+}
+```
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\mymodule;
+
+use Drupal\graphql_compose\Plugin\GraphQLCompose\FieldType\AddressItem;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Field\FieldItemInterface;
+
+/**
+ * My custom field override.
+ */
+class MyAddressItem extends AddressItem {
+
+  public function resolveFieldItem(FieldItemInterface $item, array $context, RefinableCacheableDependencyInterface $metadata) {
+    $result = parent::resolveFieldItem($item, $context, $metadata);
+
+    if (!is_null($result)) {
+      $result['cool'] = TRUE;
+    }
+
+    return $result;
+  }
+}
+```
+
+## Option: Create a new plugin
+
+In your module:
+
+- Create the path `src/Plugin/GraphQLCompose/FieldType/`
+- Create a new file `MyFieldType.php`.
+
+### Annotation properties
+
+| Property      | Type   | Note                                                                                                |
+| ------------- | ------ | --------------------------------------------------------------------------------------------------- |
+| `id`          | string | This should match the id of your @FieldType definition. Eg: TextWithSummaryItem = text_with_summary |
+| `type_sdl`    | string | The GraphQL type your field value will be. Maps to a `SchemaType` plugin.                           |
+| `description` | string | (Optional) You can set a default description for your field within the schema.                      |
+
+### Simple field value
 
 ```php
 <?php
@@ -29,28 +102,26 @@ use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerTrait;
  * {@inheritDoc}
  *
  * @GraphQLComposeFieldType(
- *   id = "dingo_field",
+ *   id = "my_field_type",
  *   type_sdl = "String",
  * )
  */
-class DingoItem extends GraphQLComposeFieldTypeBase {
-
+class MyFieldType extends GraphQLComposeFieldTypeBase {
   use FieldProducerTrait;
-
 }
-
 ```
 
-The annotation under `GraphQLComposeFieldType` tells us two things.
+If your field only needs to get `$item->value` and returns a simple scalar like String, Boolean, Int, you can just use `FieldProducerTrait`.
 
-- **id**: The name of the field you are trying to extend.
-- **type_sdl**: The type it will become in GraphQL.
+### Complex field value
 
-## Complex value
+If your new field has more complex data, like a list of values:
 
-If your new field has more complex data, like a list of values, you can change the `type_sdl` to a custom type and implement the `FieldProducerItemInterface` interface.
+1. Change the `type_sdl` to a custom type
+2. Implement the `FieldProducerItemInterface` interface.
+3. Extend or replace the `resolveFieldItem` method.
 
-This allows us to override the value, and return an array of data to be passed to a new **type_sdl** of `Dingo`
+This example produces an array value for a _my_complex_field_ field.
 
 ```php
 <?php
@@ -69,11 +140,11 @@ use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerTrait;
  * {@inheritDoc}
  *
  * @GraphQLComposeFieldType(
- *   id = "dingo_field",
- *   type_sdl = "Dingo",
+ *   id = "my_complex_field",
+ *   type_sdl = "MyComplexType",
  * )
  */
-class DingoItem extends GraphQLComposeFieldTypeBase implements FieldProducerItemInterface {
+class MyComplexFieldItem extends GraphQLComposeFieldTypeBase implements FieldProducerItemInterface {
 
   use FieldProducerTrait;
 
@@ -81,17 +152,12 @@ class DingoItem extends GraphQLComposeFieldTypeBase implements FieldProducerItem
    * {@inheritdoc}
    */
   public function resolveFieldItem(FieldItemInterface $item, array $context, RefinableCacheableDependencyInterface $metadata) {
-    if (!$item->value) {
-      return;
-    }
-
     return [
-      'dingo' => true,
-      'bingo' => $item->value,
-      'woof' => "Dingo don't woof"
+      'label' => $item->getLabel(),
+      'foos' => $item->getBars(),
     ];
   }
 }
 ```
 
-Now you have to create a [Custom Schema Type](extending/schema_type.md) to handle the `Dingo` data you are returning.
+Now you need to create a [Custom Schema Type](extending/schema_type.md) to handle the `MyComplexType` data you are returning.

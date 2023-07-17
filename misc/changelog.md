@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0 - Beta 9 (dev)
+
+- Add `Layout Builder` support.
+- Resolve #3374255 Unsupported union.
+- Extend #3366581 Add hooks to hardcoded unions
+
 ## 2.0.0 - Beta 8
 
 `drush updatedb` required.

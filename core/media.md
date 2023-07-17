@@ -6,6 +6,80 @@
 - Click `Enable GraphQL`
 - [Add some fields](core/fields.md).
 
+<!-- tabs:start -->
+
+### **Example Query**
+
+Each media type has the option to `Enable Single Query`.
+
+The media's schema type name is used to name the query. For example, an `image` node type will have a query of `mediaImage`.
+
+```graphql
+mediaImage(id: "43267052-d965-11ed-afa1-0242ac120003") {
+  id
+  name
+}
+```
+
+### **Result**
+
+```json
+{
+  "data": {
+    "mediaImage": {
+      "id": "43267052-d965-11ed-afa1-0242ac120003",
+      "name": "My Image"
+    }
+  }
+}
+```
+
+### **MediaInterface**
+
+```graphql
+"""
+Entity type media.
+"""
+interface MediaInterface {
+  """
+  The Universally Unique IDentifier (UUID).
+  """
+  id: ID!
+
+  """
+  The time the media item was last edited.
+  """
+  changed: DateTime!
+
+  """
+  The time the media item was created.
+  """
+  created: DateTime!
+
+  """
+  Language
+  """
+  langcode: Language!
+
+  """
+  Name
+  """
+  name: String!
+
+  """
+  URL alias
+  """
+  path: String!
+
+  """
+  Published
+  """
+  status: Boolean!
+}
+```
+
+<!-- tabs:end -->
+
 ## GraphQL Types
 
 Media entities are exposed to GraphQL with the interface `MediaInterface` and the union `MediaUnion`.

@@ -12,7 +12,7 @@ If you find the rigidness of the Edge Cursor implementation too restrictive, you
 
 ## Enabling edges
 
-After enabling the feature module, Each entity type has the option to `Enable multiple query`.
+After enabling the feature module, Each entity type has the option to `Enable Multiple Query`.
 
 The node's schema type name is pluralised to name the query. For example, an `article` node type will have a query of `nodeArticles`.
 

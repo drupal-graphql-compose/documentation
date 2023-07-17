@@ -2,26 +2,31 @@
 
 > :fire: Enable the **graphql_compose_comments** module.
 
+## Enabling comments
+
+For comment to work, we need to enable the Comment type and the comment field on the entity type.
+
+### What it does
+
+Each comment field on a content type is converted into a Connection Edge query, and mutations are enabled to allow posting comments.
+
+### Enable the comment type:
+
 - Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
 - Select the `Comments` tab
 - Select the comment you want to enable.
 - Click `Enable GraphQL`
-- Click ` Enable multiple query
+- Click `Enable Multiple Query`
 
-## What it does
+### Enable the comment field:
 
-Each comment field on a content type is converted into a Connection Edge query, and mutations are enabled to allow posting comments.
+Eg a Node Page, and expose that comment field within the GraphQL Compose settings form.
 
-## Reading comments
-
-Add a "comment" type field to your entity type. Eg a Node Page, and expose that comment field within the GraphQL Compose settings form.
-
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
-- Select the _type and bundle_ for the entity type you want to enable comments on.
-- Select the comment's field
+- Select the _type and bundle_ for the entity type you want to enable comments on (eg Node Page).
+- Select the comment field
 - Click `Enable GraphQL`
 
-Now your comment field will be exposed as a sub-query Connection Edge.
+Now your comments are exposed as a sub-query Connection Edge.
 
 ### Example
 

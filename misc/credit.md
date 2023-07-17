@@ -1,10 +1,10 @@
-# Credit
+# Attribution
 
-## Drupal GraphQL
+## Projects
+
+### Drupal GraphQL
 
 The wind beneath our wings. [Drupal GraphQL](https://www.drupal.org/project/graphql).
-
-## Inspired by
 
 ### Open Social
 
@@ -16,4 +16,4 @@ The views feature is based heavily on the GraphQL 3.x [GraphQL Views](https://ww
 
 ### GraphQL Core Schema
 
-Thank you for growing the GraphQL community! Whilst our approaches may vary, the goal is the same. The result is more cool stuff on the internet. [GraphQL Core Schema](https://www.drupal.org/project/graphql_core_schema/).
+Drupal issue 2613044, GraphQL PR 1313 [GraphQL Core Schema](https://www.drupal.org/project/graphql_core_schema/).

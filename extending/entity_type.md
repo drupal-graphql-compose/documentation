@@ -1,6 +1,6 @@
-# Extending Entity Type
+# Entity Types
 
-As we use plugins, you can override mostly anything. Have it your way. 🍔.
+> As we use plugins, you can override mostly anything. Have it your way. 🍔.
 
 ## Create a new plugin
 
@@ -62,7 +62,3 @@ Properties are:
 | `description` | string  | `automatic` | The field description used withing the schema.                         |
 | `required`    | boolean | `TRUE`      | Interface fields are usually required. Optionally disable.             |
 | `multiple`    | boolean | `automatic` | Yes                                                                    |
-
-## Future plans
-
-This could be a dynamic derived plugin. This would allow us to add new entity types without having to create a new plugin.

@@ -109,4 +109,4 @@ The Settings allow you to choose what your data will be:
 
 Most of the time it's going to be a String, but you can choose to have raw data. Add your fields to the view and update the settings to match your data.
 
-> Tip: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. Its a weak type, but it gets the job done.
+> Tip: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. It's a weak type, but it gets the job done.

@@ -41,6 +41,48 @@ It also adds enables the `route(path: String!)` query, allowing you to load an e
 }
 ```
 
+### **Structure**
+
+```graphql
+type Query {
+  route(path: String!, langcode: String): RouteUnion
+}
+
+union RouteUnion = RouteInternal | RouteExternal | RouteRedirect
+
+interface Route {
+  url: String!
+  internal: Boolean!
+}
+
+type RouteInternal implements Route {
+  url: String!
+  internal: Boolean!
+  breadcrumbs: [Link!]
+  entity: RouteEntityUnion
+}
+
+union RouteEntityUnion = NodeArticle | NodePage | # Anything else enabled
+
+type Link {
+  url: String!
+  title: String!
+  internal: Boolean!
+}
+
+type RouteExternal implements Route {
+  url: String!
+  internal: Boolean!
+}
+
+type RouteRedirect implements Route {
+  url: String!
+  internal: Boolean!
+  status: Int!
+  redirect: Boolean!
+}
+```
+
 <!-- tabs:end -->
 
 ## Anatomy of a Route
@@ -49,7 +91,7 @@ Each enabled entity is added into the `RouteEntityUnion` union. If you wish to r
 
 ### `RouteInternal`
 
-Resolves to an internal type. Use the `entity` property to get deeper information on the content. Internal routes also have breadcrumbs.
+Resolves to an internal type. Use the `entity` property to get deeper information on the content. Internal routes also have [breadcrumbs](features/breadcrumbs.md).
 
 ### `RouteExternal`
 

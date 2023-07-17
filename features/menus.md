@@ -17,7 +17,7 @@ Each enabled menu is added into the `MenuAvailable` enum. For example, an menu c
 
 <!-- tabs:start -->
 
-#### **Query**
+### **Query**
 
 ```graphql
 {
@@ -32,7 +32,7 @@ Each enabled menu is added into the `MenuAvailable` enum. For example, an menu c
 }
 ```
 
-#### **Response**
+### **Response**
 
 ```json
 {
@@ -53,6 +53,100 @@ Each enabled menu is added into the `MenuAvailable` enum. For example, an menu c
       ]
     }
   }
+}
+```
+
+### **Schema**
+
+```graphql
+"""
+Entity type menu.
+"""
+interface MenuInterface {
+  """
+  The Universally Unique IDentifier (UUID).
+  """
+  id: ID!
+
+  """
+  The menu items.
+  """
+  items: [MenuItem!]!
+
+  """
+  The menu name.
+  """
+  name: String!
+}
+
+"""
+Entity type menu.
+"""
+type Menu implements MenuInterface {
+  """
+  The Universally Unique IDentifier (UUID).
+  """
+  id: ID!
+
+  """
+  The menu items.
+  """
+  items: [MenuItem!]!
+
+  """
+  The menu name.
+  """
+  name: String!
+}
+
+"""
+A menu item defined in the CMS.
+"""
+type MenuItem {
+  """
+  The Universally Unique IDentifier (UUID).
+  """
+  id: ID!
+
+  """
+  The title of the menu item.
+  """
+  title: String!
+
+  """
+  The description of the menu item.
+  """
+  description: String
+
+  """
+  The URL of the menu item.
+  """
+  url: String
+
+  """
+  Whether this menu item links to an internal route.
+  """
+  internal: Boolean!
+
+  """
+  Whether this menu item is intended to be expanded.
+  """
+  expanded: Boolean!
+
+  """
+  Attributes of this menu item.
+  """
+  attributes: MenuItemAttributes!
+
+  """
+  Child menu items of this menu item.
+  """
+  children: [MenuItem!]!
+
+  """
+  The route this menu item uses. Route loading can be disabled per menu type.
+  """
+  route: RouteUnion
 }
 ```
 

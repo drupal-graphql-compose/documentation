@@ -283,7 +283,7 @@ components {
 
 The `BlockField` block acts as a proxy back to the entity field values. Each field enabled on the entity will have a BlockField block available.
 
-Each interface field is reduced into a generic type for each entity type. Eg `Node.id` &rarr; `BlockFieldNodeId`
+Each interface field is reduced into a generic type for each entity type. Eg `Node.title` &rarr; `BlockFieldNodeTitle`
 
 Each unique field for an entity type is a specific type for that entity bundle. Eg `NodeArticle.body` &rarr; `BlockFieldNodeArticleBody`
 
@@ -295,9 +295,6 @@ Each unique field for an entity type is a specific type for that entity bundle. 
 ... on BlockField {
   fieldName
   field {
-    ... on BlockFieldNodeId {
-      id
-    }
     ... on BlockFieldNodeTitle {
       title
     }
@@ -366,9 +363,6 @@ fragment BlockFieldFragment on BlockField {
   fieldName
   field {
     __typename
-    ... on BlockFieldNodeId {
-      id
-    }
     ... on BlockFieldNodeTitle {
       title
     }

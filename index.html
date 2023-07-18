@@ -41,7 +41,11 @@
         titlePlugin({
           suffix: ' - Drupal GraphQL Compose - An Drupal GraphQL Schema Generator'
         })
-      ]
+      ],
+      tabs: {
+        persist: false,
+        sync: false
+      }
     }
     function titlePlugin(config) {
       return (hook, vm) => {

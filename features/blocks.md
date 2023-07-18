@@ -99,7 +99,9 @@ type BlockPlugin implements BlockInterface {
       title
       entity {
         ... on BlockContentBasic {
-          beans
+          body {
+            processed
+          }
         }
       }
     }
@@ -178,7 +180,7 @@ interface BlockContentInterface {
 
 Block Content entities are exposed to GraphQL with the interface `BlockContentInterface` and the union `BlockContentUnion`.
 
-Each enabled block content type has a schema type. For example, the `cool_beans` block type will be typed as `BlockContentBasic`.
+Each enabled block content type has a schema type. For example, the `basic` block type will be typed as `BlockContentBasic`.
 
 ## BlockField
 

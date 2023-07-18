@@ -283,9 +283,8 @@ components {
 
 The `BlockField` block acts as a proxy back to the entity field values. Each field enabled on the entity will have a BlockField block available.
 
-Each interface field is reduced into a generic type for each entity type. Eg `Node.title` &rarr; `BlockFieldNodeTitle`
-
-Each unique field for an entity type is a specific type for that entity bundle. Eg `NodeArticle.body` &rarr; `BlockFieldNodeArticleBody`
+- Each `interface field` is reduced into a generic type for each entity type. Eg `Node.title` &rarr; `BlockFieldNodeTitle`
+- Each `content field` for an entity type is a specific type for that entity bundle. Eg `NodeArticle.body` &rarr; `BlockFieldNodeArticleBody`
 
 <!-- tabs:start -->
 
@@ -343,7 +342,9 @@ type BlockField implements BlockInterface {
 
 <!-- tabs:end -->
 
-The layout here is user structured content - the editor can chose any fields in your entity. You need to be prepared to deal with anything your entity can do. It's going to be a beefy query. I'd suggest setting up a fragment per field.
+> :warning: The BlockFields are user content. The editor could choose any field in your entities. Be prepared to deal with anything your user can do.
+
+If fragmenting out your types out is too complex, consider using `render` instead.
 
 ## Full query example
 

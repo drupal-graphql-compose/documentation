@@ -2,7 +2,7 @@
 
 <a href="https://git.drupalcode.org/project/graphql_compose/-/pipelines?page=1&scope=all&ref=2.0.x">![Pipeline](https://git.drupalcode.org/project/graphql_compose/badges/2.0.x/pipeline.svg)</a>
 
-The Drupal GraphQL 4.x schema generator.
+A Drupal GraphQL 4.x schema generator.
 
 ## Install
 

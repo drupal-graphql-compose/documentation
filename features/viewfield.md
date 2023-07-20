@@ -35,14 +35,14 @@ Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compos
 
 On your GraphQL Compose Settings page, for your new viewfield, select the option to `Embed view as field`. This will allow you to add arguments to the view and filter the results.
 
-We create an intermediate _proxy_ field for getting your view data which will return a `ViewResultUnion`. This proxy allows for queries, with slightly altered input fields:
+We create an intermediate _proxy_ field for getting your view data which will return a `ViewResultUnion`.
 
-The changes here are:
+This proxy allows for queries, with slightly altered input fields to make it more generic:
 
-- sortKey is now a String
-- pageSize is now controlled by the viewfield
-- filter is an array of {key: '', value: ''}
-- contextualFilter is now controlled by the viewfield
+- `sortKey` is now a `String`
+- `pageSize` is now controlled by the viewfield
+- `filter` is an array of `{key: '', value: ''}`
+- `contextualFilter` is now controlled by the viewfield
 
 As each field could return a new view type, it's difficult to map without a proxy.
 

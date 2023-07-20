@@ -26,9 +26,9 @@
   - [Views](features/views.md)
   - [Viewfield](features/viewfield.md)
 - Extending
-  - [Field Types](extending/field_type.md)
   - [Schema Types](extending/schema_type.md)
   - [Entity Types](extending/entity_type.md)
+  - [Field Types](extending/field_type.md)
 - Misc
   - [UUID](misc/uuid.md)
   - [Fragments](misc/fragments.md)

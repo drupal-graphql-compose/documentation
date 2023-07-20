@@ -3,32 +3,11 @@
 > A Field Type is a Drupal field. You need to tell Drupal what data to return for your field.\
 > A Drupal field type Example is: `Drupal\text\Plugin\Field\FieldType\TextWithSummaryItem`
 
-## Option: Modify the result with hooks
+## Option: Modify the result
 
-If you want to modify the result of an existing field type, you can use hooks.
+If you want to modify the result of an existing field type, or add new fields to your interface, you can use hooks.
 
-```php
-use \Drupal\Core\Cache\RefinableCacheableDependencyInterface;
-
-/**
- * Alter results for producers which use FieldProducerPluginBase.
- *
- * @param array $results
- *   The results being returned.
- * @param array $context
- *   Context Passed to resolver. Eg $context['field'].
- * @param \Drupal\Core\Cache\RefinableCacheableDependencyInterface $metadata
- *   Context for metadata expansion.
- */
-function hook_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata) {
-  $field = $context['value']->getFieldDefinition();
-  if ($field->getName() === 'field_potato') {
-    foreach ($results as &$result) {
-      $result['chips'] = TRUE;
-    }
-  }
-}
-```
+Check out [Custom data](extending/custom_data.md) for more information.
 
 ## Option: Custom field type
 

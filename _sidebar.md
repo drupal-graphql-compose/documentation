@@ -29,6 +29,7 @@
   - [Schema Types](extending/schema_type.md)
   - [Entity Types](extending/entity_type.md)
   - [Field Types](extending/field_type.md)
+  - [Custom data](extending/custom_data.md)
 - Misc
   - [UUID](misc/uuid.md)
   - [Fragments](misc/fragments.md)

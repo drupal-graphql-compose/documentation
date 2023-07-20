@@ -34,3 +34,4 @@
   - [Fragments](misc/fragments.md)
   - [Query Names](misc/query-names.md)
   - [Attribution](misc/credit.md)
+  - [Changelog](misc/changelog.md)

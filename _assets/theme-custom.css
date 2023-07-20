@@ -11,9 +11,7 @@
   --blockquite-padding: 1rem;
   --sidebar-nav-pagelink-padding: 0.15em 0 0.15em 20px;
   --sidebar-nav-indent: 0.8em;
-}
 
-:root {
   --code-theme-function: #a6e22e;
   --code-theme-keyword: #f92672;
   --code-theme-operator: #f92672;
@@ -23,6 +21,17 @@
   --code-theme-text: #ffffff;
   --code-theme-variable: #ffffff;
   --code-theme-comment: #878787;
+
+  --modular-scale: 1.25;
+}
+
+.app-nav {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.app-nav:not(:empty) ~ main .markdown-section {
+  padding-top: 4rem;
 }
 
 .operator + .type-declaration {
@@ -94,12 +103,29 @@ pre.copy code {
 @media only screen and (min-width: 768px) {
   .sidebar-nav {
     line-height: 1.4;
-    font-size: clamp(0.85rem, 1vw, 1rem);
   }
+}
+
+.sidebar-nav > ul > li {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.sidebar-nav > ul > li * {
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
 }
 
 .sidebar-nav > ul > li + li {
   margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid var(--search-input-border-color);
+}
+
+.sidebar-nav > ul > li > ul {
+  margin-left: 0;
 }
 
 .sidebar-nav > ul > li > ul:first-child {

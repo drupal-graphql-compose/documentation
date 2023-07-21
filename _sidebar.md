@@ -9,19 +9,19 @@
   - [Nodes](core/nodes.md)
   - [Media](core/media.md)
   - [Taxonomy Terms](core/terms.md)
-- Features
+- Routing
+  - [Menus](features/menus.md)
+  - [Routes](features/routes.md)
   - [Breadcrumbs](features/breadcrumbs.md)
+- Features
   - [Blocks](features/blocks.md)
   - [Comments](features/comments.md)
   - [Edges](features/edges.md)
   - [Image Styles](features/image-styles.md)
   - [Layout Builder (dev)](features/layout-builder.md)
   - [Layout Paragraphs](features/layout-paragraphs.md)
-  - [Menus](features/menus.md)
   - [Metatags](features/metatags.md)
   - [Paragraphs](features/paragraphs.md)
-  <!-- - [Revisions & Previews](features/revisions-previews.md) -->
-  - [Routes](features/routes.md)
   - [Users](features/users.md)
   - [Views](features/views.md)
   - [Viewfield](features/viewfield.md)

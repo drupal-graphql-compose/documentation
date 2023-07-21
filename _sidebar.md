@@ -13,6 +13,7 @@
   - [Menus](features/menus.md)
   - [Routes](features/routes.md)
   - [Breadcrumbs](features/breadcrumbs.md)
+  - [Previews & Revisions (dev)](features/previews-revisions.md)
 - Features
   - [Blocks](features/blocks.md)
   - [Comments](features/comments.md)

@@ -158,10 +158,10 @@ interface ParagraphInterface {
 
 ```graphql
 {
-  route(path: "/node/1") {
+  route(path: "/node/123") {
     ... on RouteInternal {
       entity {
-        ... on NodePage {
+        ... on NodeArticle {
           content {
             ... on ParagraphInterface {
               id

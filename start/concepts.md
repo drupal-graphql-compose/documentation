@@ -7,10 +7,8 @@ A clean schema without excessive meta-spam of cms config.
 - Overridable plugins
 - Customization settings and features
 
-You should be:
+**GraphQL Compose** is built upon the Drupal Plugin API and webonyx/graphql-php. It enables you as a developer to customise and extend and add your own fields, entities and features by using hooks and custom plugins.
 
-- Enabling the features you want
-- Enabling entity types
-- Enabling fields on entity types
+## GraphQL **enhances** developer experience
 
-GraphQL Compose is built upon the Drupal Plugin API and webonyx/graphql-php. It enables you as a developer to customise and extend and add your own fields, entities and features by using hooks and custom plugins.
+GraphQL should help your frontend developers build a great experience for your users. Frontend developers don't need to know how Drupal works.

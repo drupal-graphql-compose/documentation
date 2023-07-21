@@ -25,6 +25,13 @@
   --code-theme-variable: #ffffff;
   --code-theme-comment: #878787;
   --modular-scale: 1.25;
+
+}
+
+.emoji {
+  --emoji-size: 1.55em;
+  line-height: var(--emoji-size);
+  margin-right: 0.25em;
 }
 
 .app-nav {

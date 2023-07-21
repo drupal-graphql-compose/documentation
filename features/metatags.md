@@ -27,7 +27,7 @@ composer require 'drupal/metatag:^2.0@RC'
   route(path: "/") {
     ... on RouteInternal {
       entity {
-        ... on NodePage {
+        ... on NodeArticle {
           id
           metatag {
             ... on MetaTag {
@@ -72,14 +72,14 @@ composer require 'drupal/metatag:^2.0@RC'
             "tag": "link",
             "attributes": {
               "rel": "canonical",
-              "href": "https://my-website.com.site/home"
+              "href": "https://my-website.com.site/article/123"
             }
           },
           {
             "tag": "meta",
             "attributes": {
               "name": "title",
-              "content": "Home | Demo"
+              "content": "News article one two three | Demo"
             }
           }
         ]

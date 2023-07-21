@@ -30,7 +30,7 @@ Now your comments are exposed as a sub-query Connection Edge.
 
 ### Example
 
-In this example we will enable comments on the `NodePage` entity type with a comment type of `Node`.
+In this example we will enable comments on the `NodeArticle` entity type with a comment type of `Node`.
 
 <!-- tabs:start -->
 
@@ -41,7 +41,7 @@ In this example we will enable comments on the `NodePage` entity type with a com
   route(path: "/") {
     ... on RouteInternal {
       entity {
-        ... on NodePage {
+        ... on NodeArticle {
           id
           title
 
@@ -75,7 +75,7 @@ In this example we will enable comments on the `NodePage` entity type with a com
     "route": {
       "entity": {
         "id": "2ff9ff4d-bcc5-4c78-a39b-d32a55869756",
-        "title": "Home",
+        "title": "Hello World",
         "comments": {
           "nodes": [
             {
@@ -115,10 +115,10 @@ Each _comment type_ is given it's own `Mutation`, for this example we will use a
 mutation {
   addCommentNode(
     data: {
-      entityType: NodePage
+      entityType: NodeArticle
       entityId: "2ff9ff4d-bcc5-4c78-a39b-d32a55869756"
       subject: "Hello"
-      commentBody: "Bingus Bongus"
+      commentBody: "Millennials are killing the comment industry"
     }
   ) {
     id
@@ -147,7 +147,7 @@ mutation {
         "name": "admin"
       },
       "commentBody": {
-        "processed": "<p>Bingus Bongus</p>\n"
+        "processed": "<p>Millennials are killing the comment industry</p>\n"
       }
     }
   }

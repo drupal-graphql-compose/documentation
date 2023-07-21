@@ -1,8 +1,11 @@
 # Layout Builder (dev)
 
 > :fire: Enable the **graphql_compose_layout_builder** module.\
+> :baby: This module is in development preview, please provide your feedback to make it excellent.
 
-> :baby: This module is in development preview, and could undergo changes depending on feedback.
+## Currently on dev
+
+This functionality is on the **dev** branch of graphql_compose, scheduled for beta-9.
 
 ```bash
 composer require 'drupal/graphql_compose:2.0.x-dev@dev'

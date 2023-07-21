@@ -46,7 +46,7 @@ Under the pager _options_, these settings are available:
 
 ```graphql
 {
-  coolBeans(
+  myTestView(
     sortKey: TITLE
     sortDir: ASC
     page: 0
@@ -74,7 +74,7 @@ Under the pager _options_, these settings are available:
 ```json
 {
   "data": {
-    "coolBeans": {
+    "myTestView": {
       "pageInfo": {
         "page": 0,
         "pageSize": 3,

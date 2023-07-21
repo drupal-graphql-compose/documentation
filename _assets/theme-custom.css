@@ -1,3 +1,5 @@
+@import url('//fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 :root {
   --theme-color: rgba(227, 51, 169, 1);
   --sidebar-width: 80vw; /* mobile */
@@ -7,11 +9,12 @@
   --content-max-width: 80em;
   --link-color: var(--code-theme-punctuation);
   --link-color--hover: rgba(227, 51, 169, 0.75);
-  --blockquote-em-font-style: italic;
+  --blockquote-em-fo nt-style: italic;
   --blockquite-padding: 1rem;
   --sidebar-nav-pagelink-padding: 0.15em 0 0.15em 20px;
   --sidebar-nav-indent: 0.8em;
-
+  --base-font-family: 'Roboto', sans-serif;
+  --code-font-family: 'Roboto Mono', monospace;
   --code-theme-function: #a6e22e;
   --code-theme-keyword: #f92672;
   --code-theme-operator: #f92672;
@@ -21,7 +24,6 @@
   --code-theme-text: #ffffff;
   --code-theme-variable: #ffffff;
   --code-theme-comment: #878787;
-
   --modular-scale: 1.25;
 }
 

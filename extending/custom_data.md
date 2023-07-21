@@ -2,15 +2,60 @@
 
 > This documentation is updated as questions arise in issues or on Slack.
 
-## Q: How to add a weight field to paragraphs.
+Extended examples can be found in `graphql_compose.apl.php`
 
-**Question**: Is it possible for a field with multiple paragraphs in it to be able to get the position of these paragraphs individually? I'm building an API and the order of these paragraphs should be visible in the queries.
+## Change a field's data
 
-https://www.drupal.org/project/graphql_compose/issues/3375848
+How can I change the value of a field before it is returned in the query?
 
 ---
 
-The weight for a Paragraph isn't actually a field or a value. We could add the delta as a computed field using Drupal's base field API, and set that data as the weight.
+The easiest option is to use a result alter hook.
+
+```php
+<?php
+
+/**
+ * @file
+ * My drupal module that extends graphql_compose.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+
+/**
+ * Implements hook_graphql_compose_field_results_alter().
+ *
+ * Modify the entity results as they are given to the schema.
+ */
+function mymodule_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata): void {
+
+  // Check the value is a field item list.
+  $field_list = $context['value'] ?? NULL;
+  if (!$field_list instanceof FieldItemListInterface) {
+    return;
+  }
+
+  // Get the entity and field definition off the field list item.
+  $entity = $field_list->getEntity();
+  $field = $field_list->getFieldDefinition();
+
+  // Replace data in the results array.
+  if ($entity->getEntityTypeId() ==='node' && $field->getName() === 'field_potato') {
+    $results = ['new node value for field_potato'];
+  }
+}
+```
+
+## Q: Add a computed field to an entity
+
+**Question**: Is it possible for a field with multiple paragraphs in it to be able to get the position of these paragraphs individually? I'm building an API and the order of these paragraphs should be visible in the queries.
+
+---
+
+The weight for a Paragraph isn't actually a field or a value. We could add a computed field using Drupal's base field API, and set that data as the delta.
 
 <!-- tabs:start -->
 
@@ -41,7 +86,7 @@ function mymodule_entity_base_field_info(EntityTypeInterface $entity_type): ?arr
     $fields = [];
     $fields['weight'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Weight'))
-      ->setDescription(t('The weight of this paragraph within a fieldable context.'))
+      ->setDescription(t('The delta weight of this paragraph within a fielded context.'))
       ->setComputed(TRUE)
       ->setDefaultValue(0);
     return $fields;
@@ -52,6 +97,11 @@ function mymodule_entity_base_field_info(EntityTypeInterface $entity_type): ?arr
  * Implements hook_graphql_compose_field_results_alter().
  *
  * Modify the entity results as they are given to the schema.
+ *
+ * You could also compute this somewhere else, but for this example
+ * we'll do it here.
+ *
+ * The delta is the position of the paragraph in the field.
  */
 function mymodule_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata): void {
   foreach ($results as $delta => $result) {
@@ -68,6 +118,7 @@ function mymodule_graphql_compose_field_results_alter(array &$results, array $co
  */
 function mymodule_graphql_compose_entity_base_fields_alter(array &$fields, string $entity_type_id): void {
   if ($entity_type_id === 'paragraph') {
+    // You could use any entity type base_field annotation in the array.
     $fields['weight'] = [];
   }
 }

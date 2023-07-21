@@ -1,6 +1,6 @@
 # Schema Types
 
-> A Schema Type is what GraphQL will serve you. You need to describe to the schema what your Type is.
+> :thinking: A Schema Type is what GraphQL will serve you. You need to describe to the schema what your Type is.
 
 There is plenty of ways to extend or define your own schema.
 

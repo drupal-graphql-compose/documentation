@@ -80,7 +80,7 @@
 
 @media only screen and (max-width: 768px) {
   :root {
-    --modular-scale: 1.175;
+
     --base-line-height: 1.4;
     --code-font-size: var(--font-size-s);
   }
@@ -124,7 +124,7 @@ pre.copy code {
 .sidebar-nav > ul > li * {
   font-weight: 400;
   text-transform: none;
-  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  font-size: clamp(0.85rem, 1vw, 1rem);
 }
 
 .sidebar-nav > ul > li + li {

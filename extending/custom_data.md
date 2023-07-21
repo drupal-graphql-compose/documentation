@@ -1,27 +1,18 @@
 # Custom data
 
-> This documentation is updated as questions arise in issues or on Slack.
+> :thinking: This documentation is updated as questions arise in issues or on Slack. Send us your questions!
+
+> :partying_face: You have entered developer land. Now it's no-no-code. You code.
 
 Extended examples can be found in `graphql_compose.apl.php`
 
 ## Change a field's data
 
-How can I change the value of a field before it is returned in the query?
+**Question**: How can I change the value of a field before it is returned in the query?
 
----
-
-The easiest option is to use a result alter hook.
+**Answer**: The easiest option is to use a result alter hook. Here's an excessive example:
 
 ```php
-<?php
-
-/**
- * @file
- * My drupal module that extends graphql_compose.
- */
-
-declare(strict_types=1);
-
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 
@@ -49,28 +40,17 @@ function mymodule_graphql_compose_field_results_alter(array &$results, array $co
 }
 ```
 
-## Q: Add a computed field to an entity
+## Add a computed field to an entity
 
 **Question**: Is it possible for a field with multiple paragraphs in it to be able to get the position of these paragraphs individually? I'm building an API and the order of these paragraphs should be visible in the queries.
 
----
-
-The weight for a Paragraph isn't actually a field or a value. We could add a computed field using Drupal's base field API, and set that data as the delta.
+**Answer**: The weight for a Paragraph isn't actually a field or a value. We could add a computed field using Drupal's base field API, and set that data as the delta.
 
 <!-- tabs:start -->
 
 ### **mymodule.module**
 
 ```php
-<?php
-
-/**
- * @file
- * My drupal module that extends graphql_compose.
- */
-
-declare(strict_types=1);
-
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;

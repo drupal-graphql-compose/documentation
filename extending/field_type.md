@@ -13,11 +13,9 @@ Check out [Custom data](extending/custom_data.md) for more information.
 
 To create a new plugin, add a class within your module: `src/Plugin/GraphQLCompose/FieldType/`
 
-<!-- tabs:start -->
+### Simple, single field value
 
-### **Single field value**
-
-If your field only needs to get `$item->value` from a `FieldItemInterface`, you can use the default `FieldProducerTrait` methods.
+If your field only needs to get one value from a `FieldItemInterface`, this is sufficient.
 
 ```php
 <?php
@@ -38,9 +36,24 @@ use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerTrait;
  * )
  */
 class MyFieldType extends GraphQLComposeFieldTypeBase {
+
   use FieldProducerTrait;
+
+  /**
+   * Value to return to getProducerProperty in FieldProducerTrait.
+   *
+   * This could be value, entity, something_id, whatever.
+   * It's equivalent to $entity->field_abc->value
+   *
+   * @var string
+   */
+  public $producerProperty = 'value';
 }
 ```
+
+### More complex field value
+
+<!-- tabs:start -->
 
 ### **Override field item**
 

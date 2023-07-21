@@ -119,6 +119,7 @@ function mymodule_graphql_compose_field_results_alter(array &$results, array $co
 function mymodule_graphql_compose_entity_base_fields_alter(array &$fields, string $entity_type_id): void {
   if ($entity_type_id === 'paragraph') {
     // You could use any entity type base_field annotation in the array.
+    // @see https://drupal-graphql-compose.github.io/documentation/#/extending/entity_type
     $fields['weight'] = [];
   }
 }

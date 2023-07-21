@@ -106,7 +106,7 @@ function mymodule_entity_base_field_info(EntityTypeInterface $entity_type): ?arr
 function mymodule_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata): void {
   foreach ($results as $delta => $result) {
     if ($result instanceof ParagraphInterface) {
-      $result->set('weight', $delta ?? 0);
+      $result->set('weight', $delta);
     }
   }
 }

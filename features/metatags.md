@@ -1,4 +1,4 @@
-# Metatags
+# Meta Tags
 
 > :fire: Enable the **graphql_compose_metatags** module.
 
@@ -8,15 +8,7 @@
 composer require 'drupal/metatag:^2.0@RC'
 ```
 
-## Add a metatag field to your entity (eg Node Page)
-
-- Visit `/admin/structure/types`
-- Next to the type you want to expose: Select `Manage Fields`
-- Click `Add field`
-- Select `General` &rarr; `Meta Tags`
-- Add label and continue
-- Save
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose` and enable your field.
+Entities that can display metatags will receive a `metatag` field and the `MetaTagInterface` interface.
 
 <!-- tabs:start -->
 
@@ -27,8 +19,7 @@ composer require 'drupal/metatag:^2.0@RC'
   route(path: "/") {
     ... on RouteInternal {
       entity {
-        ... on NodeArticle {
-          id
+        ... on MetaTagInterface {
           metatag {
             ... on MetaTag {
               tag
@@ -66,7 +57,6 @@ composer require 'drupal/metatag:^2.0@RC'
   "data": {
     "route": {
       "entity": {
-        "id": "2ff9ff4d-bcc5-4c78-a39b-d32a55869756",
         "metatag": [
           {
             "tag": "link",

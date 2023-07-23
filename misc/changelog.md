@@ -5,6 +5,10 @@
 - Add `Layout Builder` support.
 - Resolve #3374255 Unsupported union.
 - Extend #3366581 Add hooks to hardcoded unions
+- Add preview and revision support for route()
+- Add `MetaTagInterface` to metatag enabled entities.
+- Add metatag to all available entities, rather than just node.
+- Add `hook_graphql_compose_entity_interfaces_alter`
 
 ## 2.0.0 - Beta 8
 

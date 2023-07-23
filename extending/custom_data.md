@@ -1,4 +1,4 @@
-# Custom data
+# Custom Data
 
 > :thinking: This documentation is updated as questions arise in issues or on Slack. Send us your questions!
 

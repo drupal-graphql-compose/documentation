@@ -87,3 +87,5 @@ interface UserInterface {
 ```
 
 <!-- tabs:end -->
+
+> Tip: Emails are protected. Ensure you have the correct user permissions in place if you want to expose this data.

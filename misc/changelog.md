@@ -5,15 +5,19 @@
 Major feature for this release it experimental Layout Builder.
 This is a work in progress and will be improved in future releases.
 
-- Add `Layout Builder` support.
-- Add preview and revision support for route().
+`drush updatedb` required to enable `graphql_compose_fragments`.
+
+- Add experimental `Layout Builder` support.
+- Add preview and revision url support to `route()`.
+- Add metatag to all applicable entity types.
 - Add `MetaTagInterface` to metatag enabled entities.
-- Add metatag to all available entities.
 - Add `hook_graphql_compose_entity_interfaces_alter`.
 - #3366581 Add hooks to hardcoded unions.
 - #3376780 Add `Geofield` support.
 - #3376730 Add `Doublefield` support.
 - #3374255 Resolve unsupported union of unsupported.
+- Change `graphql_compose_fragments` and `graphql_compose_layout` to hidden modules.
+- Documentation is now moody. :sunglasses:
 
 ## 2.0.0 - Beta 8
 

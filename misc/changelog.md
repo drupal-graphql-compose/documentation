@@ -1,14 +1,19 @@
 # Changelog
 
-## 2.0.0 - Beta 9 (dev)
+## 2.0.0 - Beta 9
+
+Major feature for this release it experimental Layout Builder.
+This is a work in progress and will be improved in future releases.
 
 - Add `Layout Builder` support.
-- Resolve #3374255 Unsupported union.
-- Extend #3366581 Add hooks to hardcoded unions
-- Add preview and revision support for route()
+- Add preview and revision support for route().
 - Add `MetaTagInterface` to metatag enabled entities.
-- Add metatag to all available entities, rather than just node.
-- Add `hook_graphql_compose_entity_interfaces_alter`
+- Add metatag to all available entities.
+- Add `hook_graphql_compose_entity_interfaces_alter`.
+- #3366581 Add hooks to hardcoded unions.
+- #3376780 Add `Geofield` support.
+- #3376730 Add `Doublefield` support.
+- #3374255 Resolve unsupported union of unsupported.
 
 ## 2.0.0 - Beta 8
 

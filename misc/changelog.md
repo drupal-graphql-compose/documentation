@@ -17,7 +17,8 @@ This is a work in progress and will be improved in future releases.
 - #3376730 Add `Doublefield` support.
 - #3374255 Resolve unsupported union of unsupported.
 - Change `graphql_compose_fragments` and `graphql_compose_layout` to hidden modules.
-- Documentation is now moody. :sunglasses:
+- Remove `false|null` field/entity config on schema settings save.
+- Documentation is now _moody_. :sunglasses:
 
 ## 2.0.0 - Beta 8
 

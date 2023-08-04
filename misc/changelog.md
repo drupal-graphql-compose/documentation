@@ -15,6 +15,7 @@ This is a work in progress and will be improved in future releases.
 - #3366581 Add hooks to hardcoded unions.
 - #3376780 Add `Geofield` support.
 - #3376730 Add `Doublefield` support.
+- #3361379 Add support for custom setting exposure.
 - #3374255 Resolve unsupported union of unsupported.
 - Change `graphql_compose_fragments` and `graphql_compose_layout` to hidden modules.
 - Remove `false|null` field/entity config on schema settings save.

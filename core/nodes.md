@@ -1,6 +1,6 @@
 # Nodes
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Content` tab
 - Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
@@ -106,4 +106,4 @@ Node entities are exposed to GraphQL with the interface `NodeInterface` and the 
 
 Each enabled node type has a schema type. For example, the `article` node type will be typed as `NodeArticle`.
 
-> Tip: Don't name your content type "Union" or "Interface"
+> :thinking: Don't name your content type "Union" or "Interface"

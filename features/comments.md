@@ -12,7 +12,7 @@ Each comment field on a content type is converted into a Connection Edge query, 
 
 ### Enable the comment type:
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Comments` tab
 - Select the comment you want to enable.
 - Click `Enable GraphQL`
@@ -156,6 +156,6 @@ mutation {
 
 <!-- tabs:end -->
 
-> Tip: Use the Explorer to find out what fields are required for your particular mutations.
+> :thinking: Use the Explorer to find out what fields are required for your particular mutations.
 
-> Tip: Threaded comments use some mildly confusing 01/ 02/00.0 semantics for the thread. You can use this to reconstruct the hierarchy of comments. How? No idea. But you can.
+> :thinking: Threaded comments use some mildly confusing 01/ 02/00.0 semantics for the thread. You can use this to reconstruct the hierarchy of comments. How? No idea. But you can.

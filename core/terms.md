@@ -1,6 +1,6 @@
 # Taxonomy Terms
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Taxonomy term` tab
 - Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
@@ -97,4 +97,4 @@ Taxonomy Term entities are exposed to GraphQL with the interface `TermInterface`
 
 Each enabled vocabulary type has a schema type. For example, the `tags` vocabulary type will be typed as `TermTags`.
 
-> Tip: Don't name your content type "Union" or "Interface"
+> :thinking: Don't name your content type "Union" or "Interface"

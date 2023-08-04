@@ -2,12 +2,12 @@
 
 > :fire: Enable the **graphql_compose_users** module.
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `User` tab
 - Click `Enable GraphQL`
 - [Add some fields](core/fields.md).
 
-> Tip: If you want to load users by route, ensure you have the correct permissions in place.
+> :thinking: If you want to load users by route, ensure you have the correct permissions in place.
 
 <!-- tabs:start -->
 
@@ -88,4 +88,4 @@ interface UserInterface {
 
 <!-- tabs:end -->
 
-> Tip: Emails are protected. Ensure you have the correct user permissions in place if you want to expose this data.
+> :thinking: Emails are protected. Ensure you have the correct user permissions in place if you want to expose this data.

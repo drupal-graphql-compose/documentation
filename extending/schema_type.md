@@ -227,7 +227,7 @@ class CustomerOrder extends GraphQLComposeSchemaTypeBase {
 }
 ```
 
-> Tip: Take a look at existing _GraphQLComposeSchemaType_ plugins to see how to chop up your schema. It's pretty flexible.
+> :thinking: Take a look at existing _GraphQLComposeSchemaType_ plugins to see how to chop up your schema. It's pretty flexible.
 
 ### **Example Schema**
 

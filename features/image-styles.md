@@ -2,7 +2,7 @@
 
 > :fire: Enable the **graphql_compose_image_style** module.
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Image style` tab
 - Select the entity bundle you want to enable.
 - Click `Enable GraphQL`

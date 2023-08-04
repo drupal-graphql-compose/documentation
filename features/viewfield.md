@@ -46,7 +46,7 @@ This proxy allows for queries, with slightly altered input fields to make it mor
 
 As each field could return a new view type, it's difficult to map without a proxy.
 
-> Tip: Viewfield contextual filters can use tokens! So you could get the current entity ID and pass it to the viewfield as a contextual filter.
+> :thinking: Viewfield contextual filters can use tokens! So you could get the current entity ID and pass it to the viewfield as a contextual filter.
 
 ### Example query
 

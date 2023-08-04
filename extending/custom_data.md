@@ -1,10 +1,10 @@
 # Custom Data
 
-> :thinking: This documentation is updated as questions arise in issues or on Slack. Send us your questions!
-
 > :partying_face: You have entered developer land. Now it's no-no-code. You code.
 
 Extended examples can be found in `graphql_compose.apl.php`
+
+This documentation is updated as questions arise in issues or on Slack. Send us your questions!
 
 ## Change a field's data
 

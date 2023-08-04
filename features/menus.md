@@ -2,7 +2,7 @@
 
 > :fire: Enable the **graphql_compose_menus** module.
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Menu` tab
 - Select the menu you want to enable.
 - Click `Enable GraphQL`
@@ -178,4 +178,4 @@ fragment MenuItemFragment on MenuItem {
 }
 ```
 
-> Tip: Your GraphQL server has no idea what page is _active_. Manage active state within your own app.
+> :thinking: Your GraphQL server has no idea what page is _active_. Manage active state within your own app.

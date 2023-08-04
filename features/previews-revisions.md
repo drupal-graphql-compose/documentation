@@ -1,16 +1,8 @@
-# Previews & Revisions (dev)
+# Previews & Revisions
 
 > :fire: Enable the **graphql_compose_routes** module.\
 
 Load an entity revision and previews using the `route()` query and the `route_entity_extra` resolver.
-
-## Currently on dev
-
-This functionality is on the **dev** branch of graphql_compose, scheduled for beta-9.
-
-```bash
-composer require 'drupal/graphql_compose:2.0.x-dev@dev'
-```
 
 ## Previews
 
@@ -30,7 +22,7 @@ query {
 }
 ```
 
-:thinking: When you click "Preview" in the Drupal admin interface, it generates a preview URL and stores your entity in a form state. Maybe you could use the preview URL in an iframe or as a redirect on the Drupal admin interface?
+> :thinking: When you click "Preview" in the Drupal admin interface, it generates a preview URL and stores your entity in a form state. Maybe you could use the preview URL in an iframe or as a redirect on the Drupal admin interface?
 
 ## Revisions
 

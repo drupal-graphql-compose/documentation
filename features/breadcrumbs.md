@@ -66,4 +66,4 @@ type Link {
 
 <!-- tabs:end -->
 
-> Tip: Use the _internal_ property to determine if a route is within your app or somewhere externally. It could help with transitions within your app.
+> :thinking: Use the _internal_ property to determine if a route is within your app or somewhere externally. It could help with transitions within your app.

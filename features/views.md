@@ -38,7 +38,7 @@ Under the pager _options_, these settings are available:
 
 ## Sample query
 
-> Tip: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. Consider using a viewfield for context.
+> :thinking: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. Consider using a viewfield for context.
 
 <!-- tabs:start -->
 
@@ -93,7 +93,7 @@ Under the pager _options_, these settings are available:
 
 <!-- tabs:end -->
 
-> Tip: Your query structure will vary to the above examples based on what you have enabled within your view. Check your GraphQL Explorer for the available options under your query and input types.
+> :thinking: Your query structure will vary to the above examples based on what you have enabled within your view. Check your GraphQL Explorer for the available options under your query and input types.
 
 ## Field Views
 
@@ -109,4 +109,4 @@ The Settings allow you to choose what your data will be:
 
 Most of the time it's going to be a String, but you can choose to have raw data. Add your fields to the view and update the settings to match your data.
 
-> Tip: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. It's a weak type, but it gets the job done.
+> :thinking: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. It's a weak type, but it gets the job done.

@@ -4,13 +4,13 @@
 
 Block Content are an entity with a type, which will follow the core entity pattern.
 
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Custom block` tab
 - Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
 - [Add some fields](core/fields.md).
 
-> Tip: GraphQL Compose supports the [block_field](https://www.drupal.org/project/block_field) module. You can use it load blocks by reference in a field.
+> :thinking: GraphQL Compose supports the [block_field](https://www.drupal.org/project/block_field) module. You can use it load blocks by reference in a field.
 
 ## Blocks
 

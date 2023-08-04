@@ -1,15 +1,7 @@
-# Layout Builder (dev)
+# Layout Builder (experimental)
 
 > :fire: Enable the **graphql_compose_layout_builder** module.\
-> :baby: This module is in development preview, please provide your feedback to make it excellent.
-
-## Currently on dev
-
-This functionality is on the **dev** branch of graphql_compose, scheduled for beta-9.
-
-```bash
-composer require 'drupal/graphql_compose:2.0.x-dev@dev'
-```
+> :baby: This module is experimental, please provide your feedback to make it excellent.
 
 ## Whats added
 
@@ -23,7 +15,7 @@ Each entity with Layout Builder enabled will receive:
 _The assumption here is you know how to use Layout Builder within Drupal._
 
 - Enable Layout Builder on a Display Mode for your entity.
-- Navigate to the `GraphQL Compose Settings` page at `/admin/config/graphql_compose`
+- Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the entity bundle you want to enable.
 - Click `Enable Layout Builder`
 

@@ -1,6 +1,6 @@
 # Previews & Revisions
 
-> :fire: Enable the **graphql_compose_routes** module.\
+> :fire: Enable the **graphql_compose_routes** module.
 
 Load an entity revision and previews using the `route()` query and the `route_entity_extra` resolver.
 

@@ -206,7 +206,7 @@ If you're a savvy developer, you can override or modify a schema type by alterin
  * Implements hook_graphql_compose_field_type_alter().
  */
 function mymodule_graphql_compose_field_type_alter(array &$field_types) {
-  $field_types['address']->setClass('Drupal\mymodule\MyAddressItem');
+  $field_types['address']['class'] = 'Drupal\mymodule\MyAddressItem';
 }
 ```
 

@@ -2,6 +2,8 @@
 
 > :fire: Enable the **graphql_compose_views** module.
 
+You can expose your enabled GraphQL Compose entities via a GraphQL Compose view.
+
 ## Create the base view
 
 - Add a new view `/admin/structure/views/add`
@@ -27,7 +29,7 @@ From there the following enums are possible:
 
 And the result type will be `MyQueryNameHereResult`, with an interface of `View`
 
-### Pagination
+## Pagination
 
 Items to display: Enable the full or mini pager (it doesn't matter) in the view to enable the `page` argument.
 
@@ -36,9 +38,42 @@ Under the pager _options_, these settings are available:
 - `pageSize`: Allow user to control the number of items displayed in this view
 - `offset`: Allow user to specify number of items skipped from beginning of this view.
 
-## Sample query
+## Filtering
 
-> :thinking: _Currently_ there is no real context for the view. If using contextual filters, weigh up how they are actually different to _regular_ filters. Consider using a viewfield for context.
+To enable filters on your view, just add a filter to your view, and expose it to the user.
+
+EG Adding the sticky filter.
+
+- Click `Filter criteria` &rarr; `add`
+- Search and add `Sticky at top of lists` in the `Content` category
+- Enable `Expose this filter to visitors`
+- Apply and save
+
+> :collision: If your view returns an entity type that is not supported and enabled by GraphQL Compose, it's going to throw an error. Filter your views content types accordingly. Eg if you have a view that returns `Node` entities, you should limit the content types to your enabled bundles.
+
+## Field Views
+
+Optionally you can expose individual fields rather than entities. To do so
+
+- In the Format section, click `Show` &rarr; `Entity` and change to `Fields`
+
+Now add your fields to the `Fields` section.
+
+Most of the time results are going to be a String, but you can choose to have raw data.
+
+- In the Format section, click `Show` &rarr; `Settings` to modify the result field data types.
+
+Options are:
+
+- String
+- Int
+- Float
+- Boolean
+- Custom Scalar
+
+> :thinking: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. It's a weak type, but it gets the job done.
+
+## Sample query
 
 <!-- tabs:start -->
 
@@ -95,18 +130,4 @@ Under the pager _options_, these settings are available:
 
 > :thinking: Your query structure will vary to the above examples based on what you have enabled within your view. Check your GraphQL Explorer for the available options under your query and input types.
 
-## Field Views
-
-Under `Format` &rarr; `Show`, change _Entity_ to _Fields_
-
-The Settings allow you to choose what your data will be:
-
-- String
-- Int
-- Float
-- Boolean
-- Custom Scalar
-
-Most of the time it's going to be a String, but you can choose to have raw data. Add your fields to the view and update the settings to match your data.
-
-> :thinking: If you choose to have raw data, using a Custom Scalar can help avoid Type issues. It's a weak type, but it gets the job done.
+> :thinking: _Currently_ there is no real context for the view. If using contextual filters, weigh up how they are actually different to _regular_ filters. Consider using a viewfield for context.

@@ -38,7 +38,7 @@ Under the pager _options_, these settings are available:
 
 ## Sample query
 
-> :thinking: _Currently_ there is no real context for the view, if using contextual filters, weigh up how they are actually different to contextual filters. Consider using a viewfield for context.
+> :thinking: _Currently_ there is no real context for the view. If using contextual filters, weigh up how they are actually different to _regular_ filters. Consider using a viewfield for context.
 
 <!-- tabs:start -->
 

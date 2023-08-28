@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.0 - Beta 11
+
+- Feature: Support `svg_image` module.
+- Allow setting edge max limits.
+- Remove token module dependency.
+- Add optional embedded svg_image module support.
+- Fix views field max-age 0.
+
+## 2.0.0 - Beta 10
+
+Few cache related fixes. Bit boring.
+
+- Fix metadata cache leak on file/image
+- Fix breadcrumbs forcing cache max-age 0
+- Fix preview cache should have max-age 0
+- Fix revision by route, actually do the thing.
+- Add breadcrumb test, it now works.
+
 ## 2.0.0 - Beta 9
 
 Major feature for this release it experimental Layout Builder.

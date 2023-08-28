@@ -2,11 +2,15 @@
 
 ## 2.0.0 - Beta 11
 
+`drush updatedb` and a cache clear required.
+
 - Feature: Support `svg_image` module.
 - Allow setting edge max limits.
 - Remove token module dependency.
-- Add optional embedded svg_image module support.
 - Fix views field max-age 0.
+- Merge graphql_compose_fragments into main module.
+- Add `size` to `Image` for filesize.
+- Add optional embedded svg_image module support.
 
 ## 2.0.0 - Beta 10
 
@@ -22,8 +26,6 @@ Few cache related fixes. Bit boring.
 
 Major feature for this release it experimental Layout Builder.
 This is a work in progress and will be improved in future releases.
-
-`drush updatedb` required to enable `graphql_compose_fragments`.
 
 - Add experimental `Layout Builder` support.
 - Add preview and revision url support to `route()`.

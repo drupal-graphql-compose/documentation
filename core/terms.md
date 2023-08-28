@@ -86,6 +86,11 @@ interface TermInterface {
   Published
   """
   status: Boolean!
+
+  """
+  The weight of this term in relation to other terms.
+  """
+  weight: Int!
 }
 ```
 

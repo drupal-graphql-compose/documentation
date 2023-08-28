@@ -9,8 +9,9 @@
 - Remove token module dependency.
 - Fix views field max-age 0.
 - Merge graphql_compose_fragments into main module.
-- Add `size` to `Image` for filesize.
+- Add `size` to `Image` for image file size.
 - Add optional embedded svg_image module support.
+- Fix issue #3383868 `TermInterface` `weight` field.
 
 ## 2.0.0 - Beta 10
 

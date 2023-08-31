@@ -1,4 +1,4 @@
-# Layout Paragraphs
+# Layout Paragraphs (Contrib)
 
 > :fire: Enable the **graphql_compose_layout_paragraphs** module.
 

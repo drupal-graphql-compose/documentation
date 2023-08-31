@@ -1,4 +1,4 @@
-# Viewfield
+# Viewfield (contrib)
 
 We support the ability to add a view as a field on a type. To enable, install the [Viewfield](https://www.drupal.org/project/viewfield) module.
 

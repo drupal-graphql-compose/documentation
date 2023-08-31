@@ -1,4 +1,4 @@
-# Meta Tags
+# Metatag (contrib)
 
 > :fire: Enable the **graphql_compose_metatags** module.
 

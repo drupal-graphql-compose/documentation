@@ -66,3 +66,13 @@ Enum's can be combined in the `variations` query to get the desired content.
 ```
 
 <!-- tabs:end -->
+
+## Embedded SVG Support
+
+To enable embedded SVG image support, download and enable the `svg_image` module.
+
+```bash
+composer require 'drupal/svg_image'
+```
+
+After installing and configuring, a setting will be shown in the GraphQL Compose Settings page to expose SVG images in your responses.

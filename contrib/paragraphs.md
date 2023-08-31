@@ -1,10 +1,16 @@
-# Paragraphs
+# Paragraphs (contrib)
 
 - Visit GraphQL Compose &rarr; Schema at `/admin/config/graphql_compose`
 - Select the `Paragraph` tab
 - Select the entity bundle you want to enable.
 - Click `Enable GraphQL`
 - [Add some fields](core/fields.md).
+
+## Install Paragraphs module
+
+```bash
+composer require 'drupal/paragraphs:^1.15'
+```
 
 ## GraphQL Types
 

@@ -2,26 +2,28 @@
 
 ## 2.0.0 - Beta 11
 
-`drush updatedb` and a cache clear required.
+`drush updatedb` required.
 
 - Feature: Support `svg_image` module.
-- Allow setting edge max limits.
-- Remove token module dependency.
-- Fix views field max-age 0.
-- Merge graphql_compose_fragments into main module.
+- Feature: Support `eck` entity.
+- Feature: Support veeerrryyy basic `group` entity.
+- Feature: Setting for connection edge max limits.
 - Add `size` to `Image` for image file size.
-- Add optional embedded svg_image module support.
 - Fix issue #3383868 `TermInterface` `weight` field.
+- Fix views field max-age 0.
+- Refactor to enable derivers for EntityType plugins.
+- Deprecate `graphql_compose_fragments` into main module.
+- Remove `token` module dependency.
 
 ## 2.0.0 - Beta 10
 
 Few cache related fixes. Bit boring.
 
-- Fix metadata cache leak on file/image
+- Fix cache leak on file/image
 - Fix breadcrumbs forcing cache max-age 0
 - Fix preview cache should have max-age 0
 - Fix revision by route, actually do the thing.
-- Add breadcrumb test, it now works.
+- Add breadcrumb test, _it now works_.
 
 ## 2.0.0 - Beta 9
 

@@ -47,9 +47,9 @@ interface NodeInterface {
   id: ID!
 
   """
-  The username of the content author.
+  The author of this content.
   """
-  author: User!
+  author: User
 
   """
   The time that the node was last edited.

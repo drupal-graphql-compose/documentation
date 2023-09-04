@@ -11,6 +11,7 @@
 - Add `size` to `Image` for image file size.
 - Fix issue #3383868 `TermInterface` `weight` field.
 - Fix views field max-age 0.
+- Move preview entity loading to preview buffer.
 - Refactor to enable derivers for EntityType plugins.
 - Deprecate `graphql_compose_fragments` into main module.
 - Remove `token` module dependency.

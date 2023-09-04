@@ -89,3 +89,14 @@ interface UserInterface {
 <!-- tabs:end -->
 
 > :thinking: Emails are protected. Ensure you have the correct user permissions in place if you want to expose this data.
+
+## Node author information
+
+Once enabled, `NodeInterface` will receive the `author: User` field.
+
+This will populate only if the node bundle is configured to expose the author.
+
+To expose author information:
+
+- Visit the `Structure` &rarr; `Content Types` &rarr; `Edit` tab on your node bundle
+- Enable `Display author and date information`.

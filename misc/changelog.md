@@ -15,7 +15,7 @@
 - Refactor to enable derivers for EntityType plugins.
 - Deprecate `graphql_compose_fragments` into main module.
 - Remove `token` module dependency.
-- API Change: Return null for `graphql_compose_users` node `author` when display submitted is not enabled. author `User!` is now `User`
+- API Change: `NodeInterface.author: User!` is now `User` to allow for controlled access.
 
 ## 2.0.0 - Beta 10
 

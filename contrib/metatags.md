@@ -5,10 +5,12 @@
 ## Install Metatag module
 
 ```bash
-composer require 'drupal/metatag:^2.0@RC'
+composer require 'drupal/metatag:^2.0'
 ```
 
 Entities that can display metatags will receive a `metatag` field and the `MetaTagInterface` interface.
+
+If using Metatag v1.x please see issue [2945817](https://www.drupal.org/project/metatag/issues/2945817) for a required patch.
 
 <!-- tabs:start -->
 

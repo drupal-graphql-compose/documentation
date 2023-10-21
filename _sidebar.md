@@ -38,7 +38,8 @@
 - Misc
   - [UUID](misc/uuid.md)
   - [Fragments](misc/fragments.md)
-  - [Query Names](misc/query-names.md)
+  - [Query Extras](misc/query-extras.md)
   - [Attribution](misc/credit.md)
   - [Changelog](misc/changelog.md)
+  - [Upgrading beta](misc/upgrading.md)
   - [Documentation](https://github.com/drupal-graphql-compose/documentation)

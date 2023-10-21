@@ -56,20 +56,20 @@ As each field could return a new view type, it's difficult to map without a prox
 
 ```graphql
 query {
-  nodePage(id: "38fa7cf3-d5e6-4d6c-8595-ced77e2581e2") {
-    title
-
-    myViewField(sortKey: "TITLE", filter: [{ "key": "sticky", "value": "1" }]) {
-      ... on MyViewResult {
-        pageInfo {
-          page
-          pageSize
-          total
-        }
-        results {
-          ... on NodePage {
-            id
-            sticky
+  node(id: "38fa7cf3-d5e6-4d6c-8595-ced77e2581e2") {
+    ... on NodePage {
+      myViewField(sortKey: "TITLE", filter: [{ "key": "sticky", "value": "1" }]) {
+        ... on MyViewResult {
+          pageInfo {
+            page
+            pageSize
+            total
+          }
+          results {
+            ... on NodePage {
+              id
+              sticky
+            }
           }
         }
       }
@@ -83,8 +83,7 @@ query {
 ```json
 {
   "data": {
-    "nodePage": {
-      "title": "Home",
+    "node": {
       "myViewField": {
         "pageInfo": {
           "page": 0,

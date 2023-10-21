@@ -15,9 +15,11 @@ Each node type has the option to `Enable Single Query`.
 The node's schema type name is used to name the query. For example, an `article` node type will have a query of `nodeArticle`.
 
 ```graphql
-nodeArticle(id: "43267052-d965-11ed-afa1-0242ac120002") {
-  id
-  title
+node(id: "43267052-d965-11ed-afa1-0242ac120002") {
+  ... on NodeInterface {
+    id
+    title
+  }
 }
 ```
 
@@ -26,7 +28,7 @@ nodeArticle(id: "43267052-d965-11ed-afa1-0242ac120002") {
 ```json
 {
   "data": {
-    "nodeArticle": {
+    "node": {
       "id": "43267052-d965-11ed-afa1-0242ac120002",
       "title": "Hello World"
     }

@@ -1,0 +1,15 @@
+{
+  "name": "graphql-compose-docs",
+  "version": "1.0.0",
+  "description": "<a href=\"https://git.drupalcode.org/project/graphql_compose/-/pipelines?page=1&scope=all&ref=2.0.x\">![Pipeline](https://git.drupalcode.org/project/graphql_compose/badges/2.0.x/pipeline.svg)</a>",
+  "main": "index.js",
+  "scripts": {
+    "serve": "docsify serve -p 3001",
+    "dev": "npm run serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docsify-cli": "^4.4.4"
+  }
+}

@@ -77,16 +77,20 @@ For example:
 
 ```graphql
 query {
-  a: nodePage(id: 1) {
-    title
-    id
-    uuid
+  a: node(id: 1) {
+    ... on NodeInterface {
+      title
+      id
+      uuid
+    }
   }
 
-  b: nodePage(id: "7321880a-93f8-4e98-85b9-0e40fd12c3da") {
-    title
-    id
-    uuid
+  b: node(id: "7321880a-93f8-4e98-85b9-0e40fd12c3da") {
+    ... on NodeInterface {
+      title
+      id
+      uuid
+    }
   }
 }
 ```

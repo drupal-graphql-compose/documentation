@@ -15,9 +15,18 @@ Each media type has the option to `Enable Single Query`.
 The media's schema type name is used to name the query. For example, an `image` node type will have a query of `mediaImage`.
 
 ```graphql
-mediaImage(id: "43267052-d965-11ed-afa1-0242ac120003") {
-  id
-  name
+media(id: "43267052-d965-11ed-afa1-0242ac120003") {
+  ... on MediaInterface {
+    id
+    name
+  }
+  ... on MediaImage {
+    image {
+      alt
+      title
+      url
+    }
+  }
 }
 ```
 
@@ -26,9 +35,14 @@ mediaImage(id: "43267052-d965-11ed-afa1-0242ac120003") {
 ```json
 {
   "data": {
-    "mediaImage": {
+    "media": {
       "id": "43267052-d965-11ed-afa1-0242ac120003",
-      "name": "My Image"
+      "name": "My Image",
+      "image": {
+        "alt": "My Image",
+        "title": "My Image",
+        "url": "http://mysite.com/sites/default/files/2021-08/my-image.jpg"
+      }
     }
   }
 }

@@ -15,11 +15,15 @@ Each term vocabulary has the option to `Enable Single Query`.
 The term's schema type name is used to name the query. For example, an `image` node type will have a query of `termImage`.
 
 ```graphql
-termTag(id: "43267052-d965-11ed-afa1-0242ac120004") {
-  id
-  name
-  parent {
+term(id: "43267052-d965-11ed-afa1-0242ac120004") {
+  ... on TermInterface {
+    id
     name
+    parent {
+      ... on TermInterface {
+        name
+      }
+    }
   }
 }
 ```
@@ -29,7 +33,7 @@ termTag(id: "43267052-d965-11ed-afa1-0242ac120004") {
 ```json
 {
   "data": {
-    "termTag": {
+    "term": {
       "id": "43267052-d965-11ed-afa1-0242ac120004",
       "name": "My Tag",
       "parent": {

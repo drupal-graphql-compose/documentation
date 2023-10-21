@@ -69,8 +69,8 @@ declare(strict_types=1);
 
 namespace Drupal\my_module\Plugin\GraphQLCompose\FieldType;
 
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Field\FieldItemInterface;
+use Drupal\graphql\GraphQL\Execution\FieldContext;
 use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeFieldTypeBase;
 use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerItemInterface;
 use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerTrait;
@@ -90,7 +90,7 @@ class MyComplexFieldItem extends GraphQLComposeFieldTypeBase implements FieldPro
   /**
    * {@inheritdoc}
    */
-  public function resolveFieldItem(FieldItemInterface $item, array $context, RefinableCacheableDependencyInterface $metadata) {
+  public function resolveFieldItem(FieldItemInterface $item, FieldContext $context) {
     return [
       'label' => $item->getLabel(),
       'foos' => $item->getBars(),
@@ -111,9 +111,9 @@ declare(strict_types=1);
 
 namespace Drupal\my_module\Plugin\GraphQLCompose\FieldType;
 
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\graphql\GraphQL\Execution\FieldContext;
 use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeFieldTypeBase;
 use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerItemInterface;
 use Drupal\graphql_compose\Plugin\GraphQL\DataProducer\FieldProducerItemsInterface;
@@ -135,10 +135,10 @@ class MyComplexFieldItem extends GraphQLComposeFieldTypeBase implements FieldPro
   /**
    * {@inheritdoc}
    */
-  public function resolveFieldItems(FieldItemListInterface $items, array $context, RefinableCacheableDependencyInterface $metadata): array {
+  public function resolveFieldItems(FieldItemListInterface $items, FieldContext $context): array {
     $results = [];
     foreach ($items as $item) {
-      $result[] = $this->resolveFieldItem($item, $context, $metadata);
+      $result[] = $this->resolveFieldItem($item, $context);
     }
     return $results;
   }
@@ -146,7 +146,7 @@ class MyComplexFieldItem extends GraphQLComposeFieldTypeBase implements FieldPro
   /**
    * {@inheritdoc}
    */
-  public function resolveFieldItem(FieldItemInterface $item, array $context, RefinableCacheableDependencyInterface $metadata) {
+  public function resolveFieldItem(FieldItemInterface $item, FieldContext $context) {
     return [
       'label' => $item->getLabel(),
       'foos' => $item->getBars(),
@@ -178,9 +178,10 @@ public function getProducers(ResolverBuilder $builder): Composite {
     // Useful for extending this producer.
     $builder->context('field_value', $builder->fromParent()),
 
-    $builder->produce('field_type_plugin')
+    // Get the field items.
+    $builder->produce('field_producer_plugin')
       ->map('plugin', $builder->fromValue($this))
-      ->map('value', $builder->fromParent())
+      ->map('value', $builder->fromParent()),
   );
 }
 ```
@@ -217,17 +218,17 @@ declare(strict_types=1);
 
 namespace Drupal\mymodule;
 
-use Drupal\graphql_compose\Plugin\GraphQLCompose\FieldType\AddressItem;
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Field\FieldItemInterface;
+use Drupal\graphql\GraphQL\Execution\FieldContext;
+use Drupal\graphql_compose\Plugin\GraphQLCompose\FieldType\AddressItem;
 
 /**
  * My custom field override.
  */
 class MyAddressItem extends AddressItem {
 
-  public function resolveFieldItem(FieldItemInterface $item, array $context, RefinableCacheableDependencyInterface $metadata) {
-    $result = parent::resolveFieldItem($item, $context, $metadata);
+  public function resolveFieldItem(FieldItemInterface $item, FieldContext $context) {
+    $result = parent::resolveFieldItem($item, $context);
 
     if (!is_null($result)) {
       $result['cool'] = TRUE;

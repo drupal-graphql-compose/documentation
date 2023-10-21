@@ -13,29 +13,35 @@ This documentation is updated as questions arise in issues or on Slack. Send us 
 **Answer**: The easiest option is to use a result alter hook. Here's an excessive example:
 
 ```php
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
-use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\graphql\GraphQL\Execution\FieldContext;
+use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeFieldTypeInterface;
 
 /**
- * Implements hook_graphql_compose_field_results_alter().
+ * Alter results for GraphQL Compose producers.
  *
- * Modify the entity results as they are given to the schema.
+ * @param array $results
+ *   The results being returned.
+ * @param mixed $entity
+ *   The entity being resolved from.
+ * @param \Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeFieldTypeInterface $plugin
+ *   The GraphQL Compose field plugin currently being resolved.
+ * @param \Drupal\graphql\GraphQL\Execution\FieldContext $context
+ *   Context for the current resolution.
  */
-function mymodule_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata): void {
+function hook_graphql_compose_field_results_alter(array &$results, $entity, GraphQLComposeFieldTypeInterface $plugin, FieldContext $context) {
+  $field_definition = $plugin->getFieldDefinition();
 
-  // Check the value is a field item list.
-  $field_list = $context['value'] ?? NULL;
-  if (!$field_list instanceof FieldItemListInterface) {
-    return;
+  $field_name = $field_definition->getName();
+  $entity_type = $field_definition->getTargetEntityTypeId();
+
+  // Replace the results.
+  if ($entity_type === 'node' &&  $field_name === 'field_potato') {
+    $results = ['new node value for field_potato'];
   }
 
-  // Get the entity and field definition off the field list item.
-  $entity = $field_list->getEntity();
-  $field = $field_list->getFieldDefinition();
-
-  // Replace data in the results array.
-  if ($entity->getEntityTypeId() ==='node' && $field->getName() === 'field_potato') {
-    $results = ['new node value for field_potato'];
+  // The actual entity for the field being resolved.
+  if ($entity?->id() === '123') {
+    $results = ['This is node 123'];
   }
 }
 ```
@@ -51,9 +57,10 @@ function mymodule_graphql_compose_field_results_alter(array &$results, array $co
 ### **mymodule.module**
 
 ```php
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\graphql\GraphQL\Execution\FieldContext;
+use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeFieldTypeInterface;
 use Drupal\paragraphs\ParagraphInterface;
 
 /**
@@ -83,7 +90,7 @@ function mymodule_entity_base_field_info(EntityTypeInterface $entity_type): ?arr
  *
  * The delta is the position of the paragraph in the field.
  */
-function mymodule_graphql_compose_field_results_alter(array &$results, array $context, RefinableCacheableDependencyInterface $metadata): void {
+function mymodule_graphql_compose_field_results_alter(array &$results, $entity, GraphQLComposeFieldTypeInterface $plugin, FieldContext $context) {
   foreach ($results as $delta => $result) {
     if ($result instanceof ParagraphInterface) {
       $result->set('weight', $delta);

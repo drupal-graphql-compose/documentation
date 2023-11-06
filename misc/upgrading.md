@@ -5,8 +5,7 @@
 ### Entity SDL type names are now singuarized.
 
 - The language inflector has been changed to use [doctrine/inflector](https://www.doctrine-project.org/projects/doctrine-inflector/en/2.0/index.html) for better language support.
-- The entity type names are now singularized.
-- The pluralize and singularize hooks have been changed.
+- The entity type names are now optionally singularized.
 
 <!-- tabs:start -->
 
@@ -21,12 +20,63 @@ A results of this is the name of your types can change. Eg `NodeQuizzes` is now 
 
 Please check your schema and update your queries accordingly.
 
+#### **Now (With singularisation disabled)**
+
+- Entity type: Taxonomy Term
+- Vocabulary name: `Tags`
+- SDL Type: `TermTags`
+- Edge Query: `termTagsItems`
+
 #### **Before (Beta)**
 
 - Entity type: Taxonomy Term
 - Vocabulary name: `Tags`
 - SDL Type: `TermTags`
 - Edge Query: `termTagss`
+
+<!-- tabs:end -->
+
+<!-- tabs:start -->
+
+#### **Now (2.0.0+)**
+
+```php
+/**
+ * Alter the result from language pluralize.
+ *
+ * @param string $singular
+ *   Singular bundle string to be converted.
+ * @param string $plural
+ *   Result from the language inflector interface.
+ */
+function hook_graphql_compose_pluralize_alter($singular, string &$plural): void {
+  if ($singular === 'tog') {
+    $plural = 'tugs';
+  }
+}
+```
+
+- The pluralize and singularize hooks have been changed.
+- New hook `hook_graphql_compose_singularize_alter` added.
+- The `$plural` hook argument is now a `string`
+
+#### **Before (Beta)**
+
+```php
+/**
+ * Alter the result from language pluralize.
+ *
+ * @param string $original
+ *   Original string to be converted.
+ * @param array $plural
+ *   Result from the language interface.
+ */
+function hook_graphql_compose_pluralize_alter($original, array &$plural): void {
+  if ($singular === 'tog') {
+    $plural = ['tugs'];
+  }
+}
+```
 
 <!-- tabs:end -->
 

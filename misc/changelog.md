@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.0.0 - You go girl
+
+Major feature wise, we good to go into semantic versioning. \
+I'd prefer to get some new features in with a 2.1.0 release.
+
+Upgrading from beta to 2.0.0 docs: https://drupal-graphql-compose.github.io/documentation/#/misc/upgrading
+
+- Introduce simple entity type query for load by id (Advanced settings)
+- Add entity type singuliarizing (Advanced settings)
+- Add Exclude unpublished option (Advanced settings)
+- Add JSON field module support
+- Add publication_date module support
+- Issue #3390718: Add support for office hours module
+- Issue #3386690: Undefined method LinkItem::getTitle() in version 2.0.0-beta11
+- Issue #3388138: Taxonomy Term cache tags appear not to be propagating
+- Issue #3390590: MenuItem route should not inherit language from menu
+- Issue #3390437: Sub-directory installation support for routes
+- Issue #3388494: Enabling metatags submodule generates error "Interface field MetaTagInterface.metatag expected
+- Issue #3389528: Leaked breadcrumb metadata
+- Issue #3388045: Translations of referenced entities.
+- Move entity reference entity loads into producer with buffer (performance)
+- General changes: Cache checking and entity translation
+- Breaking: Remove AttributesType and use UntypedStructuredData
+- Breaking: GraphQLComposeFieldType interface changes
+- Breaking: K, lets get out of beta. :tada: less break-y now.
+
 ## 2.0.0 - Beta 11
 
 `drush updatedb` required.

@@ -2,8 +2,8 @@
 
 ## 2.0.0 - You go girl
 
-Major feature wise, we good to go into semantic versioning. \
-I'd prefer to get some new features in with a 2.1.0 release.
+Major feature/refactor wise, we good to go into semantic versioning. \
+I'd prefer to get some new features in now with a 2.1.0 release.
 
 Upgrading from beta to 2.0.0 docs: https://drupal-graphql-compose.github.io/documentation/#/misc/upgrading
 
@@ -20,11 +20,12 @@ Upgrading from beta to 2.0.0 docs: https://drupal-graphql-compose.github.io/docu
 - Issue #3388494: Enabling metatags submodule generates error "Interface field MetaTagInterface.metatag expected
 - Issue #3389528: Leaked breadcrumb metadata
 - Issue #3388045: Translations of referenced entities.
+- Issue #3399402: Allow usage of langcode as an option, on nodetypes
 - Move entity reference entity loads into producer with buffer (performance)
 - General changes: Cache checking and entity translation
 - Breaking: Remove AttributesType and use UntypedStructuredData
 - Breaking: GraphQLComposeFieldType interface changes
-- Breaking: K, lets get out of beta. :tada: less break-y now.
+- Breaking: K, lets get out of beta. :tada:
 
 ## 2.0.0 - Beta 11
 

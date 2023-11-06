@@ -20,6 +20,11 @@ node(id: "43267052-d965-11ed-afa1-0242ac120002") {
     id
     title
   }
+  ... on NodePage {
+    body {
+      processed
+    }
+  }
 }
 ```
 
@@ -30,7 +35,10 @@ node(id: "43267052-d965-11ed-afa1-0242ac120002") {
   "data": {
     "node": {
       "id": "43267052-d965-11ed-afa1-0242ac120002",
-      "title": "Hello World"
+      "title": "Hello World",
+      "body": {
+        "processed": "<p>Body text</p>"
+      }
     }
   }
 }
@@ -100,7 +108,7 @@ interface NodeInterface {
 > You can load nodes using [Routes](features/routes.md).
 > Extra loading options are available when features such as `Views`, `Route`, `Menu` and `Edges` are enabled.
 
-> You don't have to use UUIDs if you don't want to. there is options in the settings.
+> You don't have to use UUIDs if you don't want to. There is options in the Advanced Settings of GraphQL Compose.
 
 ## GraphQL Types
 

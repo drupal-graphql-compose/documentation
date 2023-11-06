@@ -2,7 +2,7 @@
 
 ## Beta to 2.0.0
 
-### Entity SDL type names are now singuarized.
+### Entity SDL type names are now (optionally) singuarized.
 
 - The language inflector has been changed to use [doctrine/inflector](https://www.doctrine-project.org/projects/doctrine-inflector/en/2.0/index.html) for better language support.
 - The entity type names are now optionally singularized.
@@ -152,7 +152,7 @@ $metadata->addCacheableDependency($entity);
 
 ### Hook `hook_graphql_compose_field_results_alter` changes
 
-This has been reworked to give direct context to the field and entity being resolved.
+This has been reworked to give direct context to the field plugin and entity being resolved.
 
 ```php
 /**
@@ -173,6 +173,19 @@ function hook_graphql_compose_field_results_alter(
   GraphQLComposeFieldTypeInterface $plugin,
   FieldContext $context
 ) {
-  // ...
+  $field_definition = $plugin->getFieldDefinition();
+
+  $field_name = $field_definition->getName();
+  $entity_type = $field_definition->getTargetEntityTypeId();
+
+  // Replace the results.
+  if ($entity_type === 'node' &&  $field_name === 'field_potato') {
+    $results = ['new node value for field_potato'];
+  }
+
+  // The actual entity for the field being resolved.
+  if ($entity?->id() === '123') {
+    $results = ['This is node 123'];
+  }
 }
 ```

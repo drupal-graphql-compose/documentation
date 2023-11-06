@@ -22,7 +22,7 @@ query {
 }
 ```
 
-> :thinking: When you click "Preview" in the Drupal admin interface, it generates a preview URL with the entities UUID, and stores your entity in a form state. Maybe you could use the preview URL in an iframe or as a redirect on the Drupal admin interface?
+> :thinking: When you click "Preview" in the Drupal admin interface, it generates a preview URL with the entities UUID, and stores your entity in a private form state **for that user**. Maybe you could use the preview URL in an iframe or as a redirect on the Drupal admin interface?
 
 ## Revisions
 

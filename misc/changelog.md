@@ -3,9 +3,9 @@
 ## 2.0.0 - You go girl
 
 Major feature/refactor wise, we good to go into semantic versioning. \
-I'd prefer to get some new features in now with a 2.1.0 release.
+I'd prefer to get some new features in now with a 2.1.0 release, and we can start to get proper sec coverage.
 
-Upgrading from beta to 2.0.0 docs: https://drupal-graphql-compose.github.io/documentation/#/misc/upgrading
+Upgrading from `beta` to `2.0.0` docs: https://drupal-graphql-compose.github.io/documentation/#/misc/upgrading
 
 - Introduce simple entity type query for load by id (Advanced settings)
 - Add entity type singuliarizing (Advanced settings)

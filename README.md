@@ -21,7 +21,7 @@ composer require 'drupal/graphql:^4.5'
 ### Install GraphQL Compose
 
 ```bash
-composer require 'drupal/graphql_compose:^2.0@beta'
+composer require 'drupal/graphql_compose:^2.0'
 ```
 
 ### Enable the module

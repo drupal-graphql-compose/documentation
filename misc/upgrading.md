@@ -14,7 +14,8 @@
 - Entity type: Taxonomy Term
 - Vocabulary name: `Tags`
 - SDL Type: `TermTag`
-- Edge Query: `termTags`
+- Single query: `termTag()`
+- Edge Query: `termTags()`
 
 A results of this is the name of your types can change. Eg `NodeQuizzes` is now `NodeQuiz`.
 
@@ -25,6 +26,7 @@ Please check your schema and update your queries accordingly.
 - Entity type: Taxonomy Term
 - Vocabulary name: `Tags`
 - SDL Type: `TermTags`
+- Single query: `termTags()`
 - Edge Query: `termTagsItems`
 
 #### **Before (Beta)**
@@ -32,6 +34,7 @@ Please check your schema and update your queries accordingly.
 - Entity type: Taxonomy Term
 - Vocabulary name: `Tags`
 - SDL Type: `TermTags`
+- Single query: `termTags()`
 - Edge Query: `termTagss`
 
 <!-- tabs:end -->

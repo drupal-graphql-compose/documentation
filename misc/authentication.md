@@ -1,6 +1,6 @@
 # Authentication
 
-> GraphQL compose doesn't handle your authentication, but heres some tips.
+> GraphQL Compose doesn't handle your authentication, but here's some tips.
 
 ## Example: Simple OAuth
 

@@ -37,6 +37,7 @@
   - [Field Types](extending/field_type.md)
 - Misc
   - [UUID](misc/uuid.md)
+  - [Authentication](misc/authentication.md)
   - [Fragments](misc/fragments.md)
   - [Query Extras](misc/query-extras.md)
   - [Attribution](misc/credit.md)

@@ -19,7 +19,7 @@ Use OAuth to authorize your GraphQL requests.
 
 ### Configure
 
-before you configure, create a key directory somewhere in your project, outside of drupal's web/docroot. _How you manage these keys is up to you. I suggest not putting them in your git repo though, generate new keys per server_.
+Before you configure, create a key directory somewhere in your project, outside of Drupal's web/docroot. _How you manage these keys is up to you. I suggest not putting them in your git repo though, generate new keys per server_.
 
 - Visit the Simple Oauth configuration page: `/admin/config/people/simple_oauth`
 - Click `Generate Keys`

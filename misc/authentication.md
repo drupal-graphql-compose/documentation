@@ -67,7 +67,7 @@ const getQuery = (token, query) =>
   }).then((response) => response.json());
 ```
 
-#### Put it all together, and query some the current user.
+#### Put it all together, and query the current user.
 
 ```javascript
 const getExample = async () => {

@@ -19,15 +19,20 @@ Use OAuth to authorize your GraphQL requests.
 
 ### Configure
 
-- Create a key directory somewhere in your project, outside of drupal's web/docroot. _How you manage these keys is up to you. I suggest not putting them in your git repo though, generate new keys per server_.
+before you configure, create a key directory somewhere in your project, outside of drupal's web/docroot. _How you manage these keys is up to you. I suggest not putting them in your git repo though, generate new keys per server_.
+
 - Visit the Simple Oauth configuration page: `/admin/config/people/simple_oauth`
 - Click `Generate Keys`
 - Enter in the relative path to your keys dir from your project. Eg `../keys`
-- `/admin/config/services/consumer`
-- `Add Consumer`
-- Add secret, something like `testing123``
+- Visit the `Clients` tab `/admin/config/services/consumer`
+- Edit `Default Consumer`
+- Set `New Secret`, EG: `testing123`
+- Set `Redirect URIs`, EG: `http://localhost`
+- Save, done.
 
-### An example using vanilla javascript
+### Example with vanilla javascript
+
+> This is just vanilla JS, some libraries like [Apollo](https://www.apollographql.com/docs/react/networking/authentication/#header) can handle this for you.
 
 #### Make a password request to your consumer.
 

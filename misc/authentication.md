@@ -25,9 +25,11 @@ Before you configure, create a key directory somewhere in your project, outside 
 - Click `Generate Keys`
 - Enter in the relative path to your keys dir from your project. Eg `../keys`
 - Visit the `Clients` tab `/admin/config/services/consumer`
-- Edit `Default Consumer`
-- Set `New Secret`, EG: `testing123`
-- Set `Redirect URIs`, EG: `http://localhost`
+- Click `Add Consumer` button `admin/config/services/consumer/add`
+- Give your consumer a label and generate a `Client ID`
+- Uncheck `Is Confidential?`
+- Uncheck `Is this consumer 3rd party?`
+- Set `Redirect URIs`, EG: `https://localhost`
 - Save, done.
 
 ### Example with vanilla javascript
@@ -47,8 +49,7 @@ const getToken = () =>
       username: 'test-user',
       password: 'test-user',
       grant_type: 'password',
-      client_id: 'default',
-      client_secret: 'testing123',
+      client_id: 'your-client-id-here',
     }),
   }).then((response) => response.json());
 ```

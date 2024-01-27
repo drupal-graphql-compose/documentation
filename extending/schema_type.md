@@ -8,8 +8,11 @@ Nothing in these example has a GraphQL Resolver. You'll need to [add your own re
 
 ## Option: Use normal GraphQL schema extensions
 
-You don't need to use GraphQL Compose to extend your schema.\
+You don't need to use GraphQL Compose to extend your schema.
+
 You can use normal [GraphQL 4.x](https://drupal-graphql.gitbook.io/graphql/) to extend or create your own schema types.
+
+Create a schema extension plugin by extending `\Drupal\graphql\Plugin\GraphQL\SchemaExtension\SdlSchemaExtensionPluginBase` and set the annotation property `schema = "graphql_compose"`.
 
 ## Option: Use the manager
 
@@ -24,7 +27,7 @@ $extension = $manager->extend($myExtension);
 $whatever = $manager->get('MyType');
 ```
 
-## Option: Use hooks on the manager
+## Option: Use hooks
 
 You can use hooks to alter the schema types just before we print the schema.
 
@@ -93,7 +96,7 @@ extend type Query {
 
 <!-- tabs:end -->
 
-## Option: Custom schema type
+## Option: Create a SchemaType plugin
 
 Create a new GraphQL Schema type of "Customer"
 

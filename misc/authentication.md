@@ -36,52 +36,44 @@ Before you configure, create a key directory somewhere in your project, outside 
 
 > This is just vanilla JS, some libraries like [Apollo](https://www.apollographql.com/docs/react/networking/authentication/#header) can handle this for you.
 
-#### Make a password request to your consumer.
-
 ```javascript
-const getToken = () =>
-  fetch('https://your.backend.io/oauth/token', {
+const drupalHost = 'https://your.backend.io';
+
+// Make a token request to your oauth consumer.
+const fetchToken = () =>
+  fetch(`${drupalHost}/oauth/token`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: new URLSearchParams({
       username: 'test-user',
-      password: 'test-user',
+      password: 'test-password-123',
       grant_type: 'password',
       client_id: 'your-client-id-here',
     }),
   }).then((response) => response.json());
-```
 
-#### Make a query to GraphQL with your token.
-
-```javascript
-const getQuery = (token, query) =>
-  fetch('https://your.backend.io/graphql', {
+// Make a query to GraphQL with your token.
+const fetchQuery = (query, token) =>
+  fetch(`${drupalHost}/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      Authorization: token ? `Bearer ${token}` : '',
     },
     body: JSON.stringify({ query }),
   }).then((response) => response.json());
-```
 
-#### Put it all together, and query the current user.
-
-```javascript
-const getExample = async () => {
-  const token = await getToken();
-  const result = await getQuery(
-    token.access_token,
-    'query { viewer { name, mail } }'
-  );
+// Put it all together, and query the current user.
+const doAuthenticatedQuery = async (query) => {
+  const token = await fetchToken();
+  const result = await fetchQuery(query, token?.access_token);
 
   console.log(result);
 };
 
-getExample();
+doAuthenticatedQuery('query { viewer { name, mail } }');
 ```
 
 ```json

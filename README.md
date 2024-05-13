@@ -1,6 +1,6 @@
 # Drupal GraphQL Compose
 
-<a href="https://git.drupalcode.org/project/graphql_compose/-/pipelines?page=1&scope=all&ref=2.0.x">![Pipeline](https://git.drupalcode.org/project/graphql_compose/badges/2.0.x/pipeline.svg)</a>
+<a href="https://git.drupalcode.org/project/graphql_compose/-/pipelines?page=1&scope=all&ref=2.2.x">![Pipeline](https://git.drupalcode.org/project/graphql_compose/badges/2.2.x/pipeline.svg)</a>
 
 A Drupal GraphQL 4.x schema generator.
 
@@ -8,20 +8,20 @@ A Drupal GraphQL 4.x schema generator.
 
 You'll need:
 
-- A functional Drupal `^9.5 || ^10` site.
+- A functional Drupal `^10.2` site.
 - The [GraphQL Compose](https://www.drupal.org/project/graphql_compose) module.
 
 ### Install dependencies
 
 ```bash
 composer require 'drupal/typed_data:^1.0@beta'
-composer require 'drupal/graphql:^4.5'
+composer require 'drupal/graphql:^4.7'
 ```
 
 ### Install GraphQL Compose
 
 ```bash
-composer require 'drupal/graphql_compose:^2.0'
+composer require 'drupal/graphql_compose:^2.1'
 ```
 
 ### Enable the module

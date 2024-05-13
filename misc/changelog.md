@@ -1,5 +1,37 @@
 # Changelog
 
+## 2.1.0 - Bussin' no caps
+
+`drush updatedb` required.
+
+- #3416642 Rename SdlSchemaExtensionPluginBase to ResolverOnlySchemaExtensionPluginBase
+- #3413606 Support for Translatable menu link uri module
+- #3410650 Support dynamic entity reference module
+- #3385029 Node preview permissions
+- #3408161 Entity references to archived nodes causing errors and null responses
+- #3390590 MenuItem route should not inherit language from menu
+- #3414670 Invalid translation language
+- #3405909 Paragraphs in preview mode not working
+- #3409260 Fields starting with int throw error if not renamed
+- #3402960 Bump GraphQL requirement to 4.6
+- #3432965 Available languages field for Nodes
+- #3424632 Make required fields in Graphql configurable for required fields in Drupal
+- #3415306 Support Menu Item Extra fields for Menu items
+- #3415310 Support Schema.org metatag
+- #3425538 Add status to Paragraphs
+- #3422424 ($bundle_id) must be of type string, int given
+- #3440525 Paragraphs Library entities are unsupported
+- #3440615 GraphQLComposeFieldTypeManager->getBundleFields does not check if bundle exists.
+- #3441242 Scheme update requires update db.
+- #3445115 Allow adding interfaces per bundle
+- #3445814 Custom language codes
+- #3446075 Querying Node directly doesn't return correct translation of Link url field
+- #3446172 Add Views filter information / Views Search API support
+
+This will be the last version supporting Drupal 9, as GraphQL 4.x has dropped support < 10.1
+
+New development and features will occur on 2.2.x
+
 ## 2.0.0 - You go girl
 
 Major feature/refactor wise, we good to go into semantic versioning. \

@@ -31,7 +31,7 @@ And the result type will be `MyQueryNameHereResult`, with an interface of `View`
 
 ## Pagination
 
-Items to display: Enable the full or mini pager (it doesn't matter) in the view to enable the `page` argument.
+Items to display: Enable the full pager (mini works, but won't have a total count) in the view to enable the `page` argument.
 
 Under the pager _options_, these settings are available:
 

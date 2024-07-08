@@ -43,3 +43,17 @@ query {
   }
 }
 ```
+
+Entity loads also support the optional `revision` argument.
+
+```graphql
+query {
+  node(id: 2, revision: 2) {
+    ... on NodeArticle {
+      title
+    }
+  }
+}
+```
+
+> :thinking: You need to have the correct permissions to view the revision. You can use a string of 'latest' to get the latest revision, or a string of 'current' to get the current revision.

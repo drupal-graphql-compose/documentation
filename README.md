@@ -8,20 +8,20 @@ A Drupal GraphQL 4.x schema generator.
 
 You'll need:
 
-- A functional Drupal `^10.2` site.
+- A functional Drupal `^10.1` site.
 - The [GraphQL Compose](https://www.drupal.org/project/graphql_compose) module.
 
 ### Install dependencies
 
 ```bash
 composer require 'drupal/typed_data:^1.0@beta'
-composer require 'drupal/graphql:^4.7'
+composer require 'drupal/graphql:^4.8'
 ```
 
 ### Install GraphQL Compose
 
 ```bash
-composer require 'drupal/graphql_compose:^2.1'
+composer require 'drupal/graphql_compose:^2.2'
 ```
 
 ### Enable the module

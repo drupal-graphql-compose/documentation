@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.0 - Because 7 ate 9.
+
+Drop support for Drupal 9.
+
+- Issue #3446989: Add Drupal 11 support + tests
+- Issue #3447229: SortKey by term weight for taxonomies
+- Issue #3457554: Error: Call to a member function
+- Issue #3440809: Support triple field
+- Issue #3459115: Enums cannot contain dashes.
+- Issue #3456532: Support for social links
+
 ## 2.1.0 - Bussin' no caps
 
 `drush updatedb` required.
